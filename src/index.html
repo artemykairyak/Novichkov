@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="disabled-scroll">
 
 <head>
     <meta charset="UTF-8">
@@ -9,18 +9,43 @@
     <meta name="keywords" content="ключевые, слова, через, запятую">
     <link rel="shortcut icon" type='image/png' href="img/icons/favicon.ico" />
     <title>Александр Новичков</title>
+    <script src="vendors/js/preloader.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="vendors/css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="vendors/css/fm.revealator.jquery.min.css">
 </head>
 
 <body>
+    <div class="preloader">
+        <div class="preloader__icon">
+            <div class="preloader__progress"></div>
+            <svg width="382" height="499" viewBox="0 0 382 499" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M182.174 498.8C164.574 497.6 149.374 496.4 133.774 487C121.974 479.9 111.774 470.4 101.774 460.9C82.5742 442.5 63.1742 422.4 55.5742 396.8C51.9573 384.819 51.119 372.263 50.2798 359.692C49.634 350.019 48.9876 340.336 47.0742 330.9C46.7742 329.5 46.3742 328 45.3742 327.1C42.6353 324.646 39.0499 323.918 35.454 323.188C32.748 322.639 30.0359 322.088 27.6742 320.8C22.4742 318 18.9742 312.9 15.8742 308.1C7.4742 294.9 0.0741999 280.7 0.2742 264.7C0.339923 259.935 0.805199 255.203 1.26903 250.485C2.21669 240.846 3.15833 231.268 0.6742 221.6C0.1742 219.7 -0.3258 217.6 0.2742 215.7C0.9742 213.4 3.1742 211.8 5.4742 211.1C8.5742 210.2 20.1742 209 21.2742 213.7C7.9742 154.5 19.0742 93.1 62.8742 48.8C66.7742 44.8 70.9742 41 75.3742 37.5C79.6742 34 84.2742 30.7 88.9742 27.7C93.6742 24.7 98.4742 21.9 103.474 19.3C108.474 16.8 113.574 14.5 118.774 12.4C123.974 10.4 129.274 8.6 134.674 7C140.074 5.5 145.474 4.2 150.974 3.1C156.474 2.1 162.074 1.3 167.574 0.8C173.174 0.3 178.774 0 184.374 0C190.174 0 195.874 0.3 201.674 0.7C205.674 1 209.674 1.3 213.774 1.7C218.774 2.2 223.674 2.8 228.574 3.5C233.774 4.2 238.874 5.1 243.974 6.2C248.374 7.2 252.774 8.3 257.074 9.8C279.574 17.9 300.274 30.8 317.274 47.7L318.274 48.7C362.074 93 373.174 154.4 359.874 213.6C360.974 208.9 372.474 210.1 375.674 211C377.974 211.7 380.174 213.3 380.874 215.6C381.474 217.5 380.974 219.6 380.474 221.5C378.057 231.17 378.976 240.75 379.902 250.392C380.354 255.107 380.808 259.837 380.874 264.6C381.074 280.6 373.674 294.8 365.274 308C362.174 312.8 358.674 317.9 353.474 320.7C351.155 321.923 348.48 322.47 345.81 323.016C342.147 323.766 338.492 324.513 335.774 327C334.674 328 334.374 329.4 334.074 330.8C332.098 340.331 331.452 350.113 330.808 359.884C329.985 372.357 329.163 384.812 325.574 396.7C317.874 422.2 298.574 442.3 279.374 460.8C269.374 470.3 259.174 479.8 247.374 486.9C231.774 496.3 216.574 497.5 198.974 498.7H182.174V498.8ZM197.874 457.5C215.874 457.5 233.474 449.9 248.074 439.5C254.874 434.7 261.074 429.2 266.574 423C266.702 422.855 266.829 422.711 266.956 422.568L267.018 422.497C272.681 416.075 276.558 411.678 272.074 403.1C268.674 396.4 263.674 391 257.974 386.1C253.344 382.169 246.197 379.993 239.997 378.106C239.099 377.833 238.222 377.566 237.374 377.3C221.974 372.4 205.774 370.1 189.574 370.3C175.574 370.5 161.574 372.7 147.974 376C140.574 377.8 133.274 379.9 126.674 383.6C118.474 388.1 113.074 394.8 108.874 403C104.455 411.643 108.331 416.042 114.06 422.543L114.374 422.9C119.874 429.1 126.074 434.6 132.874 439.4C147.574 449.8 165.174 457.4 183.074 457.4H197.874V457.5ZM231.574 356.3C224.674 353.9 217.574 352.5 210.274 351.7C203.174 350.9 196.074 350.7 189.074 350.9C175.274 351.1 161.174 352.2 148.074 356.8C135.074 361.4 122.174 368.5 110.774 376.2C109.536 377.011 108.308 377.845 107.078 378.679C102.547 381.754 98.0084 384.834 92.9743 386.8C91.3743 387.4 89.7743 387.9 88.1743 387.7C80.4743 387 74.0743 372.9 71.4743 366.8C68.8315 360.514 66.9539 353.973 65.0763 347.433C64.3253 344.816 63.5743 342.2 62.7743 339.6C60.9046 333.667 58.7117 327.838 56.521 322.015C52.6189 311.642 48.7237 301.288 46.6743 290.4C43.5743 273.9 44.7743 257 47.6743 240.5C49.9743 227.3 53.2743 214.2 57.5743 201.5C58.8409 197.7 60.4027 193.964 61.9653 190.226C65.2143 182.453 68.4666 174.673 69.0743 166.3C69.258 163.706 69.3573 161.08 69.457 158.444C69.7916 149.599 70.1304 140.644 73.6743 132.4C80.3743 116.7 98.8743 107.2 115.474 110.9C116.674 111.1 117.874 111.4 118.974 111.8C125.991 113.969 131.787 118.05 137.608 122.149C140.913 124.476 144.225 126.808 147.774 128.8C156.874 133.9 166.974 137.3 177.274 139C197.874 142.4 219.874 138.8 237.074 126.6C237.906 126.008 238.738 125.412 239.571 124.814C247.754 118.945 256.073 112.978 265.874 110.8C282.474 107.2 300.974 116.7 307.674 132.3C311.221 140.551 311.558 149.456 311.893 158.328C311.992 160.961 312.091 163.591 312.274 166.2C312.892 174.713 316.197 182.613 319.502 190.515C321.011 194.124 322.52 197.732 323.774 201.4C328.074 214.1 331.374 227.2 333.674 240.4C336.574 256.9 337.774 273.9 334.674 290.3C332.625 301.188 328.73 311.542 324.828 321.915C322.637 327.738 320.444 333.567 318.574 339.5C317.774 342.1 317.023 344.716 316.272 347.333C314.395 353.873 312.517 360.414 309.874 366.7C307.274 372.7 300.874 386.8 293.174 387.6C291.474 387.8 289.874 387.3 288.374 386.7C283.016 384.607 278.218 381.322 273.395 378.02C272.457 377.378 271.518 376.735 270.574 376.1C258.574 368.1 245.274 361.1 231.574 356.3Z" fill="black" />
+                <path d="M189.274 451C189.674 451 189.974 451 190.374 450.8C191.174 450.5 191.774 449.8 192.374 449.2C200.174 440.7 206.674 431.2 211.674 420.8C212.574 419 213.774 416.5 211.674 415C210.674 414.2 209.074 414.3 207.874 414.2C202.174 413.7 196.474 414 190.774 414C183.974 414 176.974 413.6 170.174 414.2C168.874 414.3 166.974 414.3 166.074 415.5C164.874 417 166.074 419.3 166.774 420.8C169.474 426.3 172.574 431.6 175.974 436.6C177.774 439.1 179.574 441.6 181.474 444C182.474 445.2 183.474 446.4 184.474 447.5C185.374 448.5 186.174 449.7 187.274 450.4C187.374 450.5 187.474 450.5 187.574 450.6C188.074 450.9 188.674 451 189.274 451Z" fill="black" />
+                <path d="M155.274 259.3C154.674 259.4 151.674 256.1 151.174 255.6C146.174 250.9 141.474 247.2 134.774 245.2C128.874 243.4 122.674 243 116.474 243C107.074 243 95.8742 244.3 88.9742 251.4C87.9742 252.4 86.9742 253.9 87.5742 255.2C88.0742 256.5 89.6742 256.9 90.9742 257.1C111.874 260.9 134.274 264.1 155.274 259.3Z" fill="black" />
+                <path d="M120.974 234C126.174 234.3 131.274 235.1 136.174 237C141.174 238.9 145.974 241.5 151.174 243.1C153.974 243.9 157.974 242.8 155.974 239.1C155.174 237.6 153.674 236.8 152.174 236C142.474 230.8 131.974 226.9 121.274 224.4C115.874 223.2 110.474 222.3 104.974 221.7C102.274 221.4 99.4744 221.2 96.6744 221.2C92.5744 221.1 86.8744 219.8 84.1744 224C82.8744 226.1 82.8744 228.7 83.7744 231C84.2744 232.1 84.9744 233.1 85.9744 233.7C87.1744 234.4 88.6744 234.5 90.0744 234.6C100.274 234.9 110.774 233.4 120.974 234Z" fill="black" />
+                <path d="M225.874 259.3C226.474 259.4 229.474 256.1 229.974 255.6C234.974 250.9 239.674 247.2 246.374 245.2C252.274 243.4 258.474 243 264.674 243C274.074 243 285.274 244.3 292.174 251.4C293.174 252.4 294.174 253.9 293.574 255.2C293.074 256.5 291.474 256.9 290.174 257.1C269.274 260.9 246.974 264.1 225.874 259.3Z" fill="black" />
+                <path d="M260.174 234C254.974 234.3 249.874 235.1 244.974 237C239.974 238.9 235.174 241.5 229.974 243.1C227.174 243.9 223.174 242.8 225.174 239.1C225.974 237.6 227.474 236.8 228.974 236C238.674 230.8 249.174 226.9 259.874 224.4C265.274 223.2 270.674 222.3 276.174 221.7C278.874 221.4 281.674 221.2 284.474 221.2C288.574 221.1 294.274 219.8 296.974 224C298.274 226.1 298.274 228.7 297.374 231C296.874 232.1 296.174 233.1 295.174 233.7C293.974 234.4 292.474 234.5 291.074 234.6C280.874 234.9 270.374 233.4 260.174 234Z" fill="black" />
+                <path d="M145.774 322.4C145.174 325.4 147.274 328.4 149.874 330C155.274 333.5 162.074 333.8 168.174 334.9C172.274 335.6 176.374 336.3 180.474 337.2C184.674 338.2 188.874 339.2 193.274 339.1C194.174 339.1 195.074 339 195.874 338.8C198.374 338.4 200.774 337.7 203.174 337.1C206.374 336.2 209.574 335.7 212.774 335.1C219.474 333.7 226.374 333.9 232.374 330.1C234.974 328.4 237.074 325.5 236.474 322.5" stroke="black" stroke-width="4" stroke-miterlimit="10" />
+                <path d="M146.274 394.5C174.874 398.1 203.574 398.1 232.174 394.5" stroke="black" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <div class="modal modal-success">
+        <div class="svg modal-success__icon" data-src="img/icons/modal-success.svg"></div>
+        <p class="modal-success__text">Спасибо за заявку!<br>Вам презвонят в течение 10 мин,<br>
+            чтобы уточнить детали</p>
+        <button class="modal-success__btn">Понятно</button>
+    </div>
     <main>
         <div class="container main-container">
             <section class="section main-section">
                 <div class="main-section__wrapper">
                     <menu class="main-section__menu main-section__menu_soloscreen">
                         <a href="#" class="main-section__menu-item main-section__menu-item_active">Сольно</a>
-                        <a href="#" class="main-section__menu-item">Кавер-группа</a>
+                        <a href="#" class="main-section__menu-item ">Кавер-группа</a>
                         <a href="#" class="main-section__menu-item">DeepHouseSax</a>
                     </menu>
                     <a href="#" class="main-section__order-btn">
@@ -43,8 +68,8 @@
                         </a>
                     </div>
                     <div class="main-section__title-container">
-                        <h1 class="main-section__title"><span class="main-section__title-name">Александр
-                            </span> <span class="main-section__title-lastname">Новичков
+                        <h1 class="main-section__title"><span class="main-section__title-name slideup">Александр
+                            </span><span class="main-section__title-lastname slideup">Новичков
                             </span></h1>
                         <div class="main-section__roles">
                             <span class="main-section__role">Певец</span>
@@ -58,43 +83,165 @@
         <section class="voice">
             <div class="wrapper voice-wrapper">
                 <div class="voice__info">
-                    <h2 class="voice__title">Голос, который<br>
+                    <h2 class="voice__title revealator-slideup
+                            revealator-duration5 revealator-once revealator-delay2">Голос, который<br>
                         покоряет сердца</h2>
-                    <p class="voice__genres"><span class="voice__genres-title">Репертуар: </span>Джаз, Поп, Реп</p>
-                    <p class="voice__desc">
+                    <p class="voice__genres revealator-slideup
+                            revealator-duration5 revealator-once revealator-delay2"><span class="voice__genres-title">Репертуар: </span>Джаз, Поп, Реп</p>
+                    <p class="voice__desc revealator-slideup
+                            revealator-duration5 revealator-once revealator-delay2">
                         DeepHouseSAX<br>
                         Мы — музыкальная группа, состоящая из 2-х артистов.<br>
                         Это DJ, одержимо играющий на синтезаторе и мульти-саксофонист, создающий этническую музыку с помощью саксофона и перкусионных инструментов: дарбука, конго и бонги.<br>
                         Создаем крутую музыку исключительно в стиле Deep & House.
                     </p>
-                    <p class="voice__video-title">Видео</p>
-                    <div class="video">
+                    <p class="voice__video-title title revealator-slideup
+                            revealator-duration5 revealator-delay2 revealator-once">Видео</p>
+                    <div class="video revealator-slideup
+                            revealator-duration5 revealator-delay2 revealator-once">
                         <div class="video-container">
                             <div class="video__stub">
                                 <img src="img/video1.jpg" alt="" class="video__stub-img">
                                 <span class="svg video__play-btn" data-src="img/icons/playbtn.svg"></span>
                             </div>
-                            <iframe class="video__video hidden" src="https://www.youtube.com/embed/jcWodsPWqGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="video__video video__video_hidden" src="https://www.youtube.com/embed/jcWodsPWqGU?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <p class="video__label">АЛЕКСАНДР НОВИЧКОВ & ArsenalBAND Part-1</p>
                     </div>
                 </div>
                 <div class="voice__subcol">
-                    <div class="video video_pos">
+                    <div class="video video_pos revealator-slideup
+                            revealator-duration5 revealator-delay3 revealator-once">
                         <div class="video-container">
-                            <div class="video__stub">
+                            <div class="video__stub ">
                                 <img src="img/video2.jpg" alt="" class="video__stub-img">
                                 <span class="svg video__play-btn" data-src="img/icons/playbtn.svg"></span>
                             </div>
-                            <iframe class="video__video hidden" src="https://www.youtube.com/embed/MGELcjd1oYA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="video__video video__video_hidden" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
                         </div>
                         <p class="video__label">АЛЕКСАНДР НОВИЧКОВ & ArsenalBAND Part-2</p>
                     </div>
                 </div>
             </div>
         </section>
+        <section class="gallery">
+            <div class="wrapper gallery-wrapper">
+                <p class="gallery__title title revealator-slideup
+                            revealator-duration5 revealator-once revealator-delay4">Галерея</p>
+                <span class="svg gallery__slider-arr gallery__slider-arr_left revealator-slideup
+                            revealator-duration5 revealator-once revealator-delay3" data-src="img/icons/sliderleft.svg"></span>
+                <div class="gallery__slider owl-carousel owl-theme revealator-slideup
+                            revealator-duration5 revealator-once revealator-delay5">
+                    <div class="gallery__slide">
+                        <img src="img/gallery/image 5.jpg" alt="">
+                    </div>
+                    <div class="gallery__slide">
+                        <img src="img/gallery/test.png" alt="">
+                    </div>
+                    <div class="gallery__slide">
+                        <img src="img/gallery/image 5.jpg" alt="">
+                    </div>
+                </div>
+                <span class="svg gallery__slider-arr gallery__slider-arr_right revealator-slideup
+                            revealator-duration5 revealator-once revealator-delay5" data-src="img/icons/sliderright.svg"></span>
+            </div>
+        </section>
+        <section class="clients">
+            <div class="wrapper clients-wrapper">
+                <p class="clients__title title revealator-slideup
+                            revealator-duration5 revealator-once revealator-delay3">Клиенты</p>
+                <div class="clients__table revealator-slideup
+                            revealator-duration5 revealator-once revealator-delay3">
+                    <div class="clients__item">
+                        <img src="img/clients/1200px-Gazprom-Logo-rus.png" class="clients__icon clients__icon_gazprom" alt="">
+                    </div>
+                    <div class="clients__item">
+                        <img src="img/clients/1280px-VTB_Logo_2018.png" class="clients__icon clients__icon_vtb" alt="">
+                    </div>
+                    <div class="clients__item">
+                        <img src="img/clients/Alfa-Bank.png" class="clients__icon clients__icon_alfa" alt="">
+                    </div>
+                    <div class="clients__item">
+                        <img src="img/clients/Epam_Systems_Logo.png" class="clients__icon clients__icon_epam" alt="">
+                    </div>
+                    <div class="clients__item">
+                        <img src="img/clients/logo_new_2017.png" class="clients__icon clients__icon_sber" alt="">
+                    </div>
+                    <div class="clients__item">
+                        <img src="img/clients/SoHo_2015_Logo.png" class="clients__icon clients__icon_soho" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="order">
+            <div class="wrapper order-wrapper">
+                <div class="order__title revealator-slideup
+                            revealator-duration5 revealator-once revealator-delay4">
+                    <p class="order__desc">Оформите заявку онлайн и получите скидку на выступление</p>
+                    <p class="order__sale">10%</p>
+                </div>
+                <form action="text.php" method="POST" class="order-form revealator-slideup
+                            revealator-duration4 revealator-once revealator-delay3">
+                    <div class="order-form__container order-form__container_top">
+                        <div class="order-form__input-container order-form__input-container_name ">
+                            <input type="text" class="order-form__input order-form__name">
+                            <span class="svg order-form__error" data-src="img/icons/error.svg"></span>
+                            <span class="svg order-form__success" data-src="img/icons/success.svg"></span>
+                            <span class="order-form__error-msg">Не введено имя</span>
+                        </div>
+                        <div class="order-form__input-container order-form__input-container_date">
+                            <input type="text" class="order-form__input order-form__date">
+                            <span class="svg order-form__error" data-src="img/icons/error.svg"></span>
+                            <span class="svg order-form__success" data-src="img/icons/success.svg"></span>
+                            <span class="order-form__error-msg">Неправильно введена дата</span>
+                        </div>
+                    </div>
+                    <div class="order-form__container order-form__container_bottom">
+                        <div class="order-form__input-container order-form__input-container_phone">
+                            <input type="text" class="order-form__input order-form__phone">
+                            <span class="svg order-form__error" data-src="img/icons/error.svg"></span>
+                            <span class="svg order-form__success" data-src="img/icons/success.svg"></span>
+                            <span class="order-form__error-msg">Неправильно введён номер телефона</span>
+                        </div>
+                    </div>
+                    <div class="order-form__send-btn-container">
+                        <input class="order-form__send-btn" type="submit" value="Отправить">
+                        <span class="svg order-form__arrow" data-src="img/icons/arrright.svg"></span>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="contacts">
+            <div class="wrapper contacts-wrapper">
+                <div class="contacts__table revealator-slideup
+                            revealator-duration5 revealator-once revealator-delay3">
+                    <p class="contacts__title title">Контакты</p>
+                    <a href="tel:+79678019267" class="contacts__phone">+7 967 801 92 67</a>
+                    <a href="mailto:anochok@mail.ru" target="_blank" class="contacts__email">anochok@mail.ru</a>
+                </div>
+            </div>
+        </section>
+        <section class="rivertime">
+            <div class="wrapper rivertime-wrapper">
+                <div class="rivertime__pic revealator-fade
+                            revealator-duration3 revealator-once revealator-delay1">
+                    <img class="rivertime__photo" src="img/rivertime.jpg" alt="">
+                    <div class="rivertime__labels">
+                        <p class="rivertime__subtitle">Кавер-группа</p>
+                        <p class="rivertime__title">Rivertime</p>
+                        <a href="#" class="rivertime__readmore-btn">
+                            Узнайте больше
+                            <span class="svg rivertime__readmore-arrow" data-src="img/icons/arrright.svg"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <script src="vendors/js/easySVG.min.js"></script>
+    <script src="vendors/js/jquery-3.4.1.min.js"></script>
+    <script src="vendors/js/fm.revealator.jquery.js"></script>
+    <script src="vendors/js/owl.carousel.min.js"></script>
     <script src="js/scripts.js" type="text/javascript"></script>
 </body>
 
