@@ -171,6 +171,7 @@ button {
     z-index: 1000;
     background-color: #e7e5e8;
 
+
     &_hidden {
         display: none;
 
@@ -226,6 +227,10 @@ button {
     text-align: center;
     display: none;
 
+    &_active {
+        display: block;
+    }
+
     &-success {
         &__icon {
             width: 40%;
@@ -267,13 +272,167 @@ button {
     position: relative;
 }
 
+.section_hidden {
+    display: none;
+}
+
 .main-container {
-    background-color: #e7e5e8;
+    background: linear-gradient(180deg, #e7e5e8, #e7e5e8);
+
+    &_rivertime {
+
+        background: url(img/rivertimebg.jpg) 0 0/ cover no-repeat,
+            linear-gradient(180deg, #e7e5e8, #e7e5e8);
+
+
+        .main-section {
+            background: none;
+
+            &__menu-item {
+                color: #fff;
+
+                &_active {
+                    border-bottom: 2px solid #fff;
+                }
+
+                &:hover {
+                    opacity: 1;
+                    border-bottom-color: #fff;
+                }
+            }
+
+            &__readmore-btn,
+            &__order-btn {
+                color: #fff;
+            }
+
+            &__readmore-arrow,
+            &__order-arrow {
+                path {
+                    fill: #fff;
+                }
+            }
+
+            &__soc-link {
+                opacity: 0.9;
+
+                &:hover {
+                    opacity: 1;
+
+                    .main-section__soc-icon path {
+                        fill: #fff;
+                    }
+                }
+            }
+
+            &__soc-icon {
+                path {
+                    fill: #fff;
+                }
+            }
+
+            &__title,
+            &__roles {
+                display: none;
+            }
+
+            &__title-container {
+                top: auto;
+                left: 50%;
+                bottom: 15%;
+                transform: translateX(-50%);
+            }
+
+            &__title_rivertime {
+                display: block;
+            }
+        }
+    }
+}
+
+.disable-animation {
+    .main-section {
+
+        &__menu-item {
+
+            &:not(.main-section__menu-item_active) {
+                opacity: 0.66;
+                animation: none;
+            }
+
+            &_active {
+                opacity: 1;
+                animation: none;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        &__order-btn {
+            opacity: 1;
+            animation: none;
+
+            &:hover {
+                right: 5%;
+
+                .main-section__order-arrow {
+                    right: -70px;
+                }
+            }
+        }
+
+        &__order-arrow {
+            right: -60px;
+            animation: none;
+        }
+
+        &__readmore-btn {
+            opacity: 0.5;
+            animation: non;
+
+            &:hover {
+                opacity: 1;
+
+                .main-section__readmore-arrow {
+                    left: -70px;
+                }
+            }
+        }
+
+        &__readmore-arrow {
+            animation: none;
+        }
+
+        &__soc {
+            opacity: 1;
+            animation: none;
+            bottom: 17%;
+        }
+
+        &__title {
+            &-name {
+                opacity: 1;
+                animation: none;
+            }
+
+            &-lastname {
+                opacity: 1;
+                animation: none;
+            }
+        }
+
+        &__role {
+            opacity: 1;
+            animation: none;
+        }
+    }
 }
 
 .main-section {
     height: 100vh;
-    background: url(/img/mainbg.jpg) 0 100%/ contain no-repeat;
+    background: url(/img/mainbg.jpg) 20% 100%/ contain no-repeat;
 
     &__wrapper {
         margin: 0 auto;
@@ -427,12 +586,12 @@ button {
     &__title-container {
         position: absolute;
         top: 40%;
-        left: 17%;
+        left: 18%;
     }
 
     &__title {
         font-weight: 300;
-        font-size: 70px;
+        font-size: 72px;
         letter-spacing: 0.05em;
         text-transform: uppercase;
         color: $text;
@@ -448,6 +607,17 @@ button {
             opacity: 0;
             margin-left: 14%;
             animation: slideup 1s ease 1.2s forwards;
+        }
+
+        &_rivertime {
+            display: none;
+            font-weight: 900;
+            font-size: 170px;
+            line-height: 219px;
+            text-align: center;
+            letter-spacing: 0.065em;
+            text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+            text-transform: uppercase;
         }
     }
 
@@ -483,7 +653,7 @@ button {
     }
 
     &__info {
-        width: 50%;
+        width: 55%;
     }
 
     &__title {
@@ -496,7 +666,7 @@ button {
 
     &__genres {
         line-height: 177.6%;
-        opacity: 0.8;
+        opacity: 0.8 !important;
         font-weight: 600;
         margin-bottom: 40px;
 
@@ -506,10 +676,11 @@ button {
     }
 
     &__desc {
-        width: 95%;
+        width: 100%;
         line-height: 2;
-        opacity: 0.8;
+        opacity: 0.8 !important;
         margin-bottom: 50px;
+        font-size: 18px;
     }
 
     &__video-title {
@@ -640,7 +811,7 @@ button {
     font-size: 18px;
     line-height: 22px;
     text-transform: uppercase;
-    opacity: 0.33;
+    opacity: 0.33 !important;
 }
 
 .clients {
@@ -975,9 +1146,15 @@ button {
         width: 70%;
 
         &_clicked {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
             width: 100%;
             height: 100vh;
             overflow: hidden;
+            z-index: 1000;
 
             .rivertime__photo {
                 bottom: 0;
@@ -991,10 +1168,6 @@ button {
         &:hover {
             .rivertime__readmore-arrow {
                 top: 60px;
-
-                path {
-                    fill: #fff;
-                }
             }
         }
     }
@@ -1048,5 +1221,166 @@ button {
         position: absolute;
         top: 50px;
         left: 50%;
+
+        path {
+            fill: #fff;
+        }
+    }
+}
+
+/* RIVERTIME SECTIONS*/
+
+.members {
+    background: rgb(25, 26, 28);
+    padding-bottom: 7%;
+    padding-top: 10%;
+
+    &-wrapper {
+        /*background: red;*/
+        margin: 0 0 0 18%;
+        width: 82%;
+    }
+
+    &__slider-container {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__slider-nav {
+        position: relative;
+        width: 20%;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .owl-prev,
+    .owl-next {
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+            .members__nav-arr {
+                g {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+
+        &-arr {
+            &_left {
+                margin-right: 40px;
+            }
+        }
+    }
+
+    &__slider-count {
+        text-align: center;
+        position: relative;
+        right: 17%;
+        top: -70px;
+        font-size: 18px;
+        line-height: 177.6%;
+        text-align: center;
+        opacity: 0.5;
+    }
+
+    &-info {
+        width: 70%;
+
+        &__genres {
+            line-height: 177.6%;
+            opacity: 0.8 !important;
+            font-weight: 500;
+
+            &-title {
+                font-weight: 400;
+                opacity: 0.8;
+            }
+        }
+
+        &__desc {
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.8;
+            opacity: 0.7 !important;
+            width: 60%;
+            margin-bottom: 66px;
+        }
+
+        &__group {
+            margin-bottom: 70px;
+
+        }
+
+        &__slider {
+            height: 60vh;
+
+            .owl-stage-outer {
+                padding-top: 30px;
+            }
+
+            .owl-item {
+                opacity: 0.5;
+
+                &.members-info__slide_active {
+                    opacity: 1;
+                    transform: translateY(-30px);
+                }
+
+            }
+
+            .owl-item.active:first-child {
+                opacity: 1;
+                transform: translateY(-30px);
+            }
+        }
+
+        &__slide {
+            width: 100%;
+            height: auto;
+
+
+
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        &__name {
+            display: inline-block;
+            font-size: 20px;
+            line-height: 177.6%;
+            margin-top: 15px;
+        }
+
+        &__position {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 177.6%;
+
+            opacity: 0.4;
+        }
     }
 }
