@@ -409,7 +409,7 @@ button {
 
 .main-section {
   height: 100vh;
-  background: url("../../img/mainbg.jpg") 20% 100%/contain no-repeat;
+  background: url("../../../../img/mainbg.jpg") 20% 100%/contain no-repeat;
 }
 
 .main-section__wrapper {
@@ -485,6 +485,8 @@ button {
   top: 25%;
   right: -40px;
   animation: slideuporderarrow 1s ease 1.5s forwards;
+  width: 41px;
+  height: 8px;
 }
 
 .main-section__readmore-btn {
@@ -516,6 +518,8 @@ button {
   left: -48px;
   top: 25%;
   animation: slideupreadmorearrow 1s ease 2s forwards;
+  width: 41px;
+  height: 8px;
 }
 
 .main-section__soc {
@@ -690,6 +694,8 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 47px;
+  height: 52px;
 }
 
 .video__video {
@@ -1068,6 +1074,8 @@ button {
   position: absolute;
   top: 43%;
   right: 40px;
+  width: 41px;
+  height: 8px;
 }
 
 .contacts {

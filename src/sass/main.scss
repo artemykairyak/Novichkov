@@ -508,6 +508,8 @@ button {
         top: 25%;
         right: -40px;
         animation: slideuporderarrow 1s ease 1.5s forwards;
+        width: 41px;
+        height: 8px;
     }
 
     &__readmore-btn {
@@ -539,6 +541,8 @@ button {
         left: -48px;
         top: 25%;
         animation: slideupreadmorearrow 1s ease 2s forwards;
+        width: 41px;
+        height: 8px;
     }
 
     &__soc {
@@ -719,6 +723,8 @@ button {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: 47px;
+        height: 52px;
     }
 
     &__video {
@@ -1110,6 +1116,8 @@ button {
             position: absolute;
             top: 43%;
             right: 40px;
+            width: 41px;
+            height: 8px;
         }
     }
 }
