@@ -44,6 +44,10 @@ button {
   -webkit-border-radius: 0;
 }
 
+h1 {
+  display: none;
+}
+
 @keyframes slideup {
   from {
     opacity: 0;
@@ -1123,6 +1127,8 @@ button {
 }
 
 .order-form__input-container_error .order-form__error {
+  width: 25.98px;
+  height: 22.5px;
   opacity: 1;
 }
 
@@ -1142,6 +1148,8 @@ button {
 
 .order-form__input-container_success .order-form__success {
   opacity: 1;
+  width: 25px;
+  height: 25px;
 }
 
 .order-form__error-msg {
@@ -1376,6 +1384,12 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.members .owl-prev:hover .members__nav-arr,
+.members .owl-next:hover .members__nav-arr {
+  width: 80px;
+  height: 80px;
 }
 
 .members .owl-prev:hover .members__nav-arr g,

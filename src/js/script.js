@@ -1,7 +1,7 @@
 $(function() {
-     let documentWidth = parseInt(document.documentElement.clientWidth);
-        let windowsWidth = parseInt(window.innerWidth);
-        let scrollbarWidth = windowsWidth - documentWidth;
+    let documentWidth = parseInt(document.documentElement.clientWidth);
+    let windowsWidth = parseInt(window.innerWidth);
+    let scrollbarWidth = windowsWidth - documentWidth;
 
     $('.gallery__slider').owlCarousel({
         navText: [$('.gallery__slider-arr_left'), $('.gallery__slider-arr_right')],
@@ -165,7 +165,6 @@ $(function() {
     Revealator.effects_padding = -700;
     Revealator.scroll_padding = -500;
 
-    console.log(window.location.hash);
     if (window.location.hash === '#rivertime') {
         $('.main-container').addClass('main-container_rivertime')
         $('.main-section').addClass('disable-animation');
@@ -180,12 +179,24 @@ $(function() {
         $('.main-section').addClass('disable-animation');
         setSectionClasses($('.deephouse-video'), $('.voice, .gallery, .rivertime, .members, .rivertime-video, .deephouse'));
         setMenuClasses($('.main-section__menu-item_deephouse'));
+        loadDeephouseSection();
     }
 
     $(document).ready(function() {
         setTimeout(function() {
             $('.main-section').addClass('disable-animation');
         }, 2000);
+    });
+
+    $('.main-section__order-btn').on('click', function(e) {
+        e.preventDefault();
+        let fix = $('.clients').offset().top + $('.clients').height();
+         $('html, body').animate({ scrollTop: fix }, 500);
+    });
+
+    $('.main-section__readmore-btn').on('click', function(e) {
+        e.preventDefault();
+         $('html, body').animate({ scrollTop: $('.container').height() }, 500);
     });
 
     $('.order-form__input').on('focus', function() {
@@ -224,7 +235,8 @@ $(function() {
                 });
                 setMenuClasses($('.main-section__menu-item_deephouse'));
                 setSectionClasses($('.deephouse-video'), $('.voice, .gallery, .rivertime, .members, .rivertime-video, .deephouse'));
-               displayScrollbar();
+                displayScrollbar();
+                loadDeephouseSection();
             });
         } else {
             $('.rivertime-wrapper').addClass('rivertime-wrapper_clicked');
@@ -259,6 +271,7 @@ $(function() {
     });
 
     $('.main-section__menu-item_solo').on('click', function() {
+        window.location.hash = '';
         $('.main-section').addClass('disable-animation');
         $('.main-container').removeClass('main-container_deephouse');
         $('.main-container').removeClass('main-container_rivertime');
@@ -267,24 +280,24 @@ $(function() {
     });
 
     $('.main-section__menu-item_cover').on('click', function() {
-        history.pushState(null, null, '#rivertime');
-        // location.hash = '#' + 'rivertime';
+        window.location.hash = '#rivertime';
         $('.main-section').addClass('disable-animation');
         $('.main-container').removeClass('main-container_deephouse');
         $('.main-container').addClass('main-container_rivertime');
         setMenuClasses($('.main-section__menu-item_cover'));
         setSectionClasses($('.members, .rivertime-video, .deephouse'), $('.voice, .gallery, .rivertime'));
         loadRivertimeSection();
+
     });
 
     $('.main-section__menu-item_deephouse').on('click', function() {
-        history.pushState(null, null, '#deephousesax');
-        // location.hash = '#' + 'rivertime';
+        window.location.hash = '#deephousesax';
         $('.main-section').addClass('disable-animation');
         $('.main-container').addClass('main-container_deephouse');
         $('.main-container').removeClass('main-container_rivertime');
         setMenuClasses($('.main-section__menu-item_deephouse'));
-        setSectionClasses($(), $('.voice, .gallery, .rivertime, .members, .rivertime-video, .deephouse'));
+        setSectionClasses($('.deephouse-video'), $('.voice, .gallery, .rivertime, .members, .rivertime-video, .deephouse'));
+        loadDeephouseSection();
     });
 
     function setMenuClasses(activeElem) {
@@ -309,15 +322,24 @@ $(function() {
         enableRev($('.rivertime-video__slider'), 5, 1);
         enableRev($('.rivertime-video__slider-arr'), 5, 7);
         enableRev($('.rivertime-video__nav'), 5, 6);
+        window.location.hash = '#rivertime';
         $('.deephouse__pic').addClass('revealator-fade revealator-duration3 revealator-once revealator-delay1');
     }
 
-    function removeScrollbar() {      
+    function loadDeephouseSection() {
+        window.location.hash = '#deephousesax';
+        enableRev($('.deephouse-video-info'), 5, 9);
+        enableRev($('.deephouse-video__slider'), 5, 6);
+        enableRev($('.deephouse-video__slider-arr'), 5, 7);
+        enableRev($('.deephouse-video__nav'), 5, 6);
+    }
+
+    function removeScrollbar() {
         $('html').addClass('disabled-scroll');
         $('body').css('margin-right', -scrollbarWidth);
     }
 
     function displayScrollbar() {
-         $('html').removeClass('disabled-scroll');
+        $('html').removeClass('disabled-scroll');
     }
 });

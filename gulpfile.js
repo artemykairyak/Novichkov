@@ -82,7 +82,7 @@ gulp.task('imgmin', function() {
   return gulp.src('src/img/**/*')
   .pipe(imagemin([
             imageminJpegRecompress({
-            	method: 'smallfry',
+            	method: 'ssim',
                 quality:'high'
               }),
             imagemin.optipng({optimizationLevel: 5}),

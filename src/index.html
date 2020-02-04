@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="disabled-scroll">
 <!-- ДОБАВИТЬ КЛАСС DISABLED-SCROLL -->
 
 <head>
@@ -10,16 +10,16 @@
     <meta name="keywords" content="ключевые, слова, через, запятую">
     <link rel="shortcut icon" type='image/png' href="img/icons/favicon.ico" />
     <title>Александр Новичков</title>
-    <!-- <script src="vendors/js/preloader.js"></script> -->
+    <script src="vendors/js/preloader.js"></script>
+    <h1 style="display: none">Александр Новичков</h1>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="vendors/css/swiper.min.css">
     <link rel="stylesheet" href="vendors/css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link rel="stylesheet" href="vendors/css/fm.revealator.jquery.min.css">
+    <link rel="stylesheet" href="vendors/css/fm.revealator.jquery.css">
 </head>
 
 <body>
-    <!-- <div class="preloader"> -->
+    <div class="preloader">
     <div class="preloader__icon">
         <div class="preloader__progress"></div>
         <svg width="382" height="499" viewBox="0 0 382 499" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,16 +42,16 @@
         <button class="modal-success__btn">Понятно</button>
     </div>
     <main>
-        <div class="container main-container">
-            <video class="main-container__videobg" src="img/videoplayback.mp4" muted loop autoplay poster="img/deephouse.jpg"></video>
-            <section class="section main-section">
+        <div class="container main-container ">
+            <video class="main-container__videobg" src="img/deephouse.webm" muted loop autoplay poster="img/deephouse.png"></video>
+            <section class="section main-section disable-animation">
                 <div class="main-section__wrapper">
                     <menu class="main-section__menu main-section__menu_soloscreen">
                         <a href="#" class="main-section__menu-item 
                         main-section__menu-item_solo
                         main-section__menu-item_active">Сольно</a>
-                        <a href="#" class="main-section__menu-item main-section__menu-item_cover">Кавер-группа</a>
-                        <a href="#" class="main-section__menu-item main-section__menu-item_deephouse">DeepHouseSax</a>
+                        <a href="#rivertime" class="main-section__menu-item main-section__menu-item_cover">Кавер-группа</a>
+                        <a href="#deephousesax" class="main-section__menu-item main-section__menu-item_deephouse">DeepHouseSax</a>
                     </menu>
                     <a href="#" class="main-section__order-btn">
                         Оставить заявку
@@ -139,7 +139,7 @@
                     </div>
                 </div>
                 <div class="voice__subcol">
-                    <div class="video video_pos revealator-slideup
+                    <div class="video video_pos revealator-ride
                             revealator-duration5 revealator-delay3 revealator-once">
                         <div class="video-container">
                             <div class="video__stub ">
@@ -222,6 +222,9 @@
                     <div class="rivertime-video__slide">
                         <iframe class="rivertime-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
                     </div>
+                    <div class="rivertime-video__slide">
+                        <iframe class="rivertime-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
+                    </div>
                 </div>
                 <span class="svg rivertime-video__slider-arr rivertime-video__slider-arr_right" data-src="img/icons/sliderright.svg"></span>
                 <div class="rivertime-video__nav owl-carousel owl-theme">
@@ -272,6 +275,9 @@
                         <iframe class="deephouse-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
                     </div>
                     <div class="deephouse-video__slide">
+                        <iframe class="deephouse-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
+                    </div>
+                     <div class="deephouse-video__slide">
                         <iframe class="deephouse-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
                     </div>
                 </div>
@@ -378,7 +384,7 @@
         <section class="deephouse section_hidden">
             <div class="wrapper deephouse-wrapper">
                 <div class="deephouse__pic">
-                    <img class="deephouse__photo" src="img/deephouse.jpg" alt="">
+                    <img class="deephouse__photo" src="img/deephouse.png" alt="">
                     <div class="deephouse__labels">
                         <p class="deephouse__title">DeepHouseSax</p>
                         <a href="#" class="deephouse__readmore-btn">
