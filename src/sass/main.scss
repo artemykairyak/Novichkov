@@ -4,7 +4,7 @@ $text: #3D3D3D;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    transition: all .3s ease;
+   /* transition: all .3s ease;*/
 }
 
 ul {
@@ -14,6 +14,7 @@ ul {
 html {
     font-size: 14px;
     overflow-x: hidden;
+    color: #fff !important;
 }
 
 body {
@@ -31,6 +32,11 @@ section {
     width: 100%;
     position: relative;
     background: #fff;
+
+    &:not(.main-section) * {
+         transition: all .3s ease;
+    }
+   
 }
 
 a {
@@ -174,6 +180,16 @@ h1 {
     }
 }
 
+@keyframes preloader {
+    0% {
+        height: 100%
+    }
+
+    100% {
+       height: 0;
+    }
+}
+
 .disabled-scroll {
     overflow: hidden;
 }
@@ -211,6 +227,8 @@ h1 {
         bottom: 0;
         background: #e7e5e8;
         height: 100%;
+        transition: all .5s ease;
+        animation: preloader 3s ease forwards;
     }
 }
 
@@ -295,6 +313,13 @@ h1 {
 .main-container {
     background: linear-gradient(180deg, #e7e5e8, #e7e5e8);
     position: relative;
+    display: block;
+    opacity: 1;
+
+    &_hidden {
+        display: none;
+        opacity: 0;
+    }
 
     &__videobg {
         display: none;
@@ -307,7 +332,7 @@ h1 {
         .main-section__title_rivertime {
             display: block;
             animation: slideuprivertime 1s ease forwards;
-
+            color: #fff;
         }
 
         &__videobg {
@@ -516,6 +541,11 @@ h1 {
         position: absolute;
         top: 47px;
         left: 0;
+        
+        & * {
+            transition:  all .3s ease;
+        }
+
 
         &-item {
             display: inline-block;
@@ -529,6 +559,7 @@ h1 {
             border-bottom: 2px solid transparent;
             margin-right: 47px;
             font-size: 16px;
+
 
             &:not(.main-section__menu-item_active) {
                 animation: slideupmenu 1s ease 1.5s forwards;
@@ -564,6 +595,7 @@ h1 {
         color: $text;
         opacity: 0;
         animation: slideuporderbtn 1s ease 2s forwards;
+        transition:  all .3s ease;
 
         &:hover {
             right: 5%;
@@ -581,6 +613,7 @@ h1 {
         animation: slideuporderarrow 1s ease 1.5s forwards;
         width: 41px;
         height: 8px;
+        transition:  all .3s ease;
     }
 
     &__readmore-btn {
@@ -595,6 +628,7 @@ h1 {
         color: #1F1E20;
         opacity: 0;
         animation: slideupreadmorebtn 1s ease 2s forwards;
+        transition:  all .3s ease;
 
         &:hover {
             opacity: 1;
@@ -614,6 +648,7 @@ h1 {
         animation: slideupreadmorearrow 1s ease 2s forwards;
         width: 41px;
         height: 8px;
+        transition:  all .3s ease;
     }
 
     &__soc {
@@ -630,12 +665,14 @@ h1 {
         justify-content: center;
         align-items: center;
         animation: slideupsoc 1s ease 2.5s forwards;
+        transition:  all .3s ease;
 
         &-link {
             height: 33px;
             width: 33px;
             margin-bottom: 22px;
             display: inline-block;
+            transition:  all .3s ease;
 
             &:last-child {
                 margin-bottom: 0;
@@ -655,6 +692,7 @@ h1 {
         &-icon {
             height: 33px;
             width: 33px;
+            transition:  all .3s ease;
         }
     }
 
@@ -662,10 +700,6 @@ h1 {
         position: absolute;
         top: 40%;
         left: 12%;
-
-        & * {
-            transition: none;
-        }
     }
 
     &__title {
@@ -674,8 +708,6 @@ h1 {
         letter-spacing: 0.05em;
         text-transform: uppercase;
         color: $text;
-
-
 
         &-name {
             width: 47%;
@@ -703,6 +735,7 @@ h1 {
             letter-spacing: 0.065em;
             text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
             text-transform: uppercase;
+            transition: none;
         }
 
         &_deephouse {
@@ -791,15 +824,26 @@ h1 {
 .video {
     width: 92%;
     position: relative;
+    overflow: hidden;
+
+    &-wrapper {
+          transform: translateY(105%);
+          transition: all 0.5s ease-out !important;
+
+          &_visible {
+            transform: translateY(0);
+          }
+    }
 
     &-container {
-        position: relative;
+        position: relative; 
     }
 
     &__stub {
         width: 100%;
         position: relative;
         cursor: pointer;
+
 
         &:hover {
             .video__play-btn {
@@ -861,6 +905,28 @@ h1 {
         margin: 0 auto;
         position: relative;
         height: 65vh;
+
+        .owl-dots {
+                display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: flex;
+                
+
+                .owl-dot {
+                    width: 35%;
+
+                    &.active {
+                        .rivertime-video__navitem {
+                             opacity: .8;
+
+                            font-weight: 600;
+                        }                     
+                    }
+                }
+            }
+
 
         &-arr {
             position: absolute;
@@ -1465,6 +1531,10 @@ h1 {
         &__slider {
             height: 65vh;
 
+            .owl-stage {
+                /*width: 2340px !important;*/
+            }
+
             .owl-stage-outer {
                 padding-top: 30px;
                 overflow: hidden;
@@ -1472,11 +1542,17 @@ h1 {
 
             .owl-item {
                 opacity: 0.5;
-                display: inline-block;
-                width: 30%;
+                /*display: inline;*/
+                /*width: 300px !important;*/
+
+                &:last-child {
+                    img {
+                        visibility: hidden;
+                    }
+                }
 
                 img {
-                    width: 100%;
+                    width: 360px;
                     height: auto;
                 }
 
@@ -1486,6 +1562,7 @@ h1 {
                 }
             }
 
+            
             .owl-item.active:first-child {
                 opacity: 1;
                 transform: translateY(-30px);
@@ -1548,6 +1625,7 @@ h1 {
             font-size: 16px;
             line-height: 177.6%;
             color: #fff;
+            margin-right: 97px;
 
             &_active {
                 opacity: 0.8;

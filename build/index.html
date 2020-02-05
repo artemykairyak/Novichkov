@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="disabled-scroll">
+<html lang="ru">
 <!-- ДОБАВИТЬ КЛАСС DISABLED-SCROLL -->
 
 <head>
@@ -10,7 +10,7 @@
     <meta name="keywords" content="ключевые, слова, через, запятую">
     <link rel="shortcut icon" type='image/png' href="img/icons/favicon.ico" />
     <title>Александр Новичков</title>
-    <script src="vendors/js/preloader.js"></script>
+    <!-- <script src="vendors/js/preloader.js"></script> -->
     <h1 style="display: none">Александр Новичков</h1>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="vendors/css/owl.carousel.min.css">
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="preloader">
+    <!-- <div class="preloader"> -->
     <div class="preloader__icon">
         <div class="preloader__progress"></div>
         <svg width="382" height="499" viewBox="0 0 382 499" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,7 @@
         <button class="modal-success__btn">Понятно</button>
     </div>
     <main>
-        <div class="container main-container ">
+        <div class="container main-container main-container_hidden">
             <video class="main-container__videobg" src="img/deephouse.webm" muted loop autoplay poster="img/deephouse.png"></video>
             <section class="section main-section disable-animation">
                 <div class="main-section__wrapper">
@@ -126,9 +126,9 @@
                     </p>
                     <p class="voice__video-title title revealator-slideup
                             revealator-duration5 revealator-delay2 revealator-once">Видео</p>
-                    <div class="video revealator-slideup
-                            revealator-duration5 revealator-delay2 revealator-once">
-                        <div class="video-container">
+                    <div class="video">
+                        <div class="video-wrapper">
+                             <div class="video-container">
                             <div class="video__stub">
                                 <img src="img/video1.jpg" alt="" class="video__stub-img">
                                 <span class="svg video__play-btn" data-src="img/icons/playbtn.svg"></span>
@@ -136,19 +136,22 @@
                             <iframe class="video__video video__video_hidden" src="https://www.youtube.com/embed/jcWodsPWqGU?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <p class="video__label">АЛЕКСАНДР НОВИЧКОВ & ArsenalBAND Part-1</p>
+                        </div>
+                       
                     </div>
                 </div>
                 <div class="voice__subcol">
-                    <div class="video video_pos revealator-ride
-                            revealator-duration5 revealator-delay3 revealator-once">
+                    <div class="video video_pos">
+                            <div class="video-wrapper">
                         <div class="video-container">
                             <div class="video__stub ">
                                 <img src="img/video2.jpg" alt="" class="video__stub-img">
                                 <span class="svg video__play-btn" data-src="img/icons/playbtn.svg"></span>
                             </div>
-                            <iframe class="video__video video__video_hidden" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
+                            <iframe class="video__video video__video_hidden" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
                         </div>
                         <p class="video__label">АЛЕКСАНДР НОВИЧКОВ & ArsenalBAND Part-2</p>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -203,6 +206,9 @@
                                 <span class="members-info__name">Александр Новичков</span>
                                 <span class="members-info__position">Вокалист</span>
                             </div>
+                            <div class="members-info__slide">
+                                <img src="img/1.jpg" alt=""> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -213,26 +219,26 @@
                 <p class="rivertime-video__title title">Видео</p>
                 <span class="svg rivertime-video__slider-arr rivertime-video__slider-arr_left" data-src="img/icons/sliderleft.svg"></span>
                 <div class="rivertime-video__slider owl-carousel owl-theme">
-                    <div class="rivertime-video__slide">
-                        <iframe class="rivertime-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
+                    <div class="rivertime-video__slide" data-dot='<span class="rivertime-video__navitem ">PROMO-2019</span>'>
+                        <iframe class="rivertime-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
                     </div>
-                    <div class="rivertime-video__slide">
-                        <iframe class="rivertime-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
+                    <div class="rivertime-video__slide" data-dot='<span class="rivertime-video__navitem">Sevak Khanagyan & Lyudmila Sokolova "Я чувствую кожей" <br>(cover by ALEX NOVICH & Татьяна Грицаенко)</span>'>
+                        <iframe class="rivertime-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
                     </div>
-                    <div class="rivertime-video__slide">
-                        <iframe class="rivertime-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
+                    <div class="rivertime-video__slide" data-dot='<span class="rivertime-video__navitem">День города Саратов 2019</span>'>
+                        <iframe class="rivertime-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
                     </div>
-                    <div class="rivertime-video__slide">
-                        <iframe class="rivertime-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
+                    <div class="rivertime-video__slide" data-dot='<span class="rivertime-video__navitem">День города Саратов 2019</span>'>
+                        <iframe class="rivertime-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
                 <span class="svg rivertime-video__slider-arr rivertime-video__slider-arr_right" data-src="img/icons/sliderright.svg"></span>
-                <div class="rivertime-video__nav owl-carousel owl-theme">
+               <!--  <div class="rivertime-video__nav owl-carousel owl-theme">
                     <span class="rivertime-video__navitem rivertime-video__navitem_active">PROMO-2019</span>
                     <span class="rivertime-video__navitem">Sevak Khanagyan & Lyudmila Sokolova "Я чувствую кожей" <br>(cover by ALEX NOVICH & Татьяна Грицаенко)</span>
                     <span class="rivertime-video__navitem">День города Саратов 2019</span>
                     <span class="rivertime-video__navitem">День города Саратов 2019</span>
-                </div>
+                </div> -->
             </div>
         </section>
         <section class="gallery">
@@ -269,16 +275,16 @@
                 <span class="svg deephouse-video__slider-arr deephouse-video__slider-arr_left" data-src="img/icons/sliderleft.svg"></span>
                 <div class="deephouse-video__slider owl-carousel owl-theme">
                     <div class="deephouse-video__slide">
-                        <iframe class="deephouse-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
+                        <iframe class="deephouse-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
                     </div>
                     <div class="deephouse-video__slide">
-                        <iframe class="deephouse-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
+                        <iframe class="deephouse-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
                     </div>
                     <div class="deephouse-video__slide">
-                        <iframe class="deephouse-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
+                        <iframe class="deephouse-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
                     </div>
                      <div class="deephouse-video__slide">
-                        <iframe class="deephouse-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen enablejsapi="1"></iframe>
+                        <iframe class="deephouse-video__video" src="https://www.youtube.com/embed/MGELcjd1oYA?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
                     </div>
                 </div>
                 <span class="svg deephouse-video__slider-arr deephouse-video__slider-arr_right" data-src="img/icons/sliderright.svg"></span>
@@ -328,13 +334,13 @@
                             revealator-duration4 revealator-once revealator-delay3">
                     <div class="order-form__container order-form__container_top">
                         <div class="order-form__input-container order-form__input-container_name ">
-                            <input type="text" class="order-form__input order-form__name">
+                            <input type="text" name="name" class="order-form__input order-form__name">
                             <span class="svg order-form__error" data-src="img/icons/error.svg"></span>
                             <span class="svg order-form__success" data-src="img/icons/success.svg"></span>
                             <span class="order-form__error-msg">Не введено имя</span>
                         </div>
                         <div class="order-form__input-container order-form__input-container_date">
-                            <input type="text" class="order-form__input order-form__date">
+                            <input type="text" name="date" class="order-form__input order-form__date">
                             <span class="svg order-form__error" data-src="img/icons/error.svg"></span>
                             <span class="svg order-form__success" data-src="img/icons/success.svg"></span>
                             <span class="order-form__error-msg">Неправильно введена дата</span>
@@ -342,7 +348,7 @@
                     </div>
                     <div class="order-form__container order-form__container_bottom">
                         <div class="order-form__input-container order-form__input-container_phone">
-                            <input type="text" class="order-form__input order-form__phone">
+                            <input type="text" name="phone" class="order-form__input order-form__phone">
                             <span class="svg order-form__error" data-src="img/icons/error.svg"></span>
                             <span class="svg order-form__success" data-src="img/icons/success.svg"></span>
                             <span class="order-form__error-msg">Неправильно введён номер телефона</span>
@@ -398,7 +404,6 @@
     </main>
     <script src="vendors/js/easySVG.min.js"></script>
     <!-- <script src="vendors/js/scroll.js"></script> -->
-    <!-- <script src="vendors/js/swiper.min.js"></script> -->
     <script src="vendors/js/jquery-3.4.1.min.js"></script>
     <script src="vendors/js/fm.revealator.jquery.js"></script>
     <script src="vendors/js/owl.carousel.min.js"></script>
