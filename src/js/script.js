@@ -39,10 +39,13 @@ $(function() {
 
     $('.overlay').on('click', function() {
         $(this).hide();
-        $('.modal-success').fadeOut(300);
+        $('.modal-success').fadeOut(300, function() {
+            $(this).removeClass('modal_active');
+        });
     });
 
     function showModal() {
+        $('.modal-success').addClass('modal_active');
         $('.modal-success').fadeIn(300);
         $('.overlay').show();
     }
@@ -54,15 +57,15 @@ $(function() {
                 url: 'https://cors-anywhere.herokuapp.com/http://novichkov.asap-lp.ru/mail/index.php',
                 type: "POST",
                 data: data,
-                success: function(data){
+                success: function(data) {
                     showModal();
-                
-  },
-            error: function(error) {
-                console.log(error)
-            },
+
+                },
+                error: function(error) {
+                    console.log(error)
+                },
                 dataType: 'json'
-            
+
             });
 
             let inputs = $(this).find('.order-form__input-container');
@@ -92,7 +95,7 @@ $(function() {
 
     $(window).on('scroll', function() {
         if (($(window).scrollTop() + $(window).height()) >= $('.video-wrapper:first').offset().top) {
-            setTimeout(() => $('.video-wrapper:first').delay(2000).addClass('video-wrapper_visible'), 0);
+            setTimeout(() => $('.video-wrapper:first').delay(1000).addClass('video-wrapper_visible'), 0);
         }
 
         if (($(window).scrollTop() + $(window).height()) >= $('.video-wrapper:last').offset().top) {
@@ -108,6 +111,7 @@ $(function() {
         $('.main-section').addClass('disable-animation');
         setSectionClasses($('.members, .rivertime-video, .deephouse'), $('.voice, .gallery, .rivertime, .deephouse-video'));
         setMenuClasses($('.main-section__menu-item_cover'));
+        setMobileMenuClasses($('.main-section__mobile-item_cover'));
         loadRivertimeSection();
     }
 
@@ -116,11 +120,15 @@ $(function() {
         $('.main-section').addClass('disable-animation');
         setSectionClasses($('.deephouse-video'), $('.voice, .gallery, .rivertime, .members, .rivertime-video, .deephouse'));
         setMenuClasses($('.main-section__menu-item_deephouse'));
+        setMobileMenuClasses($('.main-section__mobile-item_deephouse'));
         loadDeephouseSection();
     }
 
-    $('.main-section__order-btn').on('click', function(e) {
+    $('.main-section__order-btn, .main-section__mobile-orderbtn').on('click', function(e) {
         e.preventDefault();
+        if ($('.main-section__mobile').hasClass('main-section__mobile_active')) {
+            $('.main-section__mobile').removeClass('main-section__mobile_active');
+        }
         let fix = $('.clients').offset().top + $('.clients').height();
         $('html, body').animate({ scrollTop: fix }, 700);
     });
@@ -156,33 +164,59 @@ $(function() {
         removeScrollbar();
 
         if ($(this).hasClass('deephouse__pic')) {
-            $('.deephouse-wrapper').addClass('deephouse-wrapper_clicked');
             $('.main-container').removeClass('main-container_rivertime');
             $('.main-container').addClass('main-container_deephouse');
-            $('html, body').animate({ scrollTop: 0 }, 100, function() {
-                $('.deephouse__pic').animate({ 'opacity': 0 }, 300, function() {
-                    $('.deephouse__pic').css({ 'opacity': 1 });
-                    $('.deephouse-wrapper').removeClass('deephouse-wrapper_clicked');
+            if ($(window).width() > 1270) {
+                $('.deephouse-wrapper').addClass('deephouse-wrapper_clicked');
+
+                $('html, body').animate({ scrollTop: 0 }, 100, function() {
+                    $('.deephouse__pic').animate({ 'opacity': 0 }, 300, function() {
+                        $('.deephouse__pic').css({ 'opacity': 1 });
+                        $('.deephouse-wrapper').removeClass('deephouse-wrapper_clicked');
+                    });
+                    setMenuClasses($('.main-section__menu-item_deephouse'));
+                    setMobileMenuClasses($('.main-section__mobile-item_deephouse'));
+                    setSectionClasses($('.deephouse-video'), $('.voice, .gallery, .rivertime, .members, .rivertime-video, .deephouse'));
+                    displayScrollbar();
+                    loadDeephouseSection();
                 });
-                setMenuClasses($('.main-section__menu-item_deephouse'));
-                setSectionClasses($('.deephouse-video'), $('.voice, .gallery, .rivertime, .members, .rivertime-video, .deephouse'));
-                displayScrollbar();
-                loadDeephouseSection();
-            });
+            } else {
+                $('html, body').animate({ scrollTop: 0 }, 100, function() {
+                    setMenuClasses($('.main-section__menu-item_deephouse'));
+                    setMobileMenuClasses($('.main-section__mobile-item_deephouse'));
+                    setSectionClasses($('.deephouse-video'), $('.voice, .gallery, .rivertime, .members, .rivertime-video, .deephouse'));
+                    displayScrollbar();
+                    loadDeephouseSection();
+                });
+            }
+
         } else {
-            $('.rivertime-wrapper').addClass('rivertime-wrapper_clicked');
             $('.main-container').addClass('main-container_rivertime');
             $('.main-container').removeClass('main-container_deephouse');
-            $('html, body').animate({ scrollTop: 0 }, 100, function() {
-                $('.rivertime__pic').animate({ 'opacity': 0 }, 300, function() {
-                    $('.rivertime__pic').css({ 'opacity': 1 });
-                    $('.rivertime-wrapper').removeClass('rivertime-wrapper_clicked');
+
+            if ($(window).width() > 1270) {
+                $('.rivertime-wrapper').addClass('rivertime-wrapper_clicked');
+
+                $('html, body').animate({ scrollTop: 0 }, 100, function() {
+                    $('.rivertime__pic').animate({ 'opacity': 0 }, 300, function() {
+                        $('.rivertime__pic').css({ 'opacity': 1 });
+                        $('.rivertime-wrapper').removeClass('rivertime-wrapper_clicked');
+                    });
+                    setMenuClasses($('.main-section__menu-item_cover'));
+                    setMobileMenuClasses($('.main-section__mobile-item_cover'));
+                    setSectionClasses($('.members, .rivertime-video, .deephouse'), $('.voice, .gallery, .rivertime, .deephouse-video'));
+                    displayScrollbar();
+                    loadRivertimeSection();
                 });
-                setMenuClasses($('.main-section__menu-item_cover'));
-                setSectionClasses($('.members, .rivertime-video, .deephouse'), $('.voice, .gallery, .rivertime, .deephouse-video'));
-                displayScrollbar();
-                loadRivertimeSection();
-            });
+            } else {
+                $('html, body').animate({ scrollTop: 0 }, 100, function() {
+                    setMenuClasses($('.main-section__menu-item_cover'));
+                    setMobileMenuClasses($('.main-section__mobile-item_cover'));
+                    setSectionClasses($('.members, .rivertime-video, .deephouse'), $('.voice, .gallery, .rivertime, .deephouse-video'));
+                    displayScrollbar();
+                    loadRivertimeSection();
+                });
+            }
         }
     });
 
@@ -201,35 +235,67 @@ $(function() {
     });
 
     $('.main-section__menu-item_solo').on('click', function() {
+        loadSolo();
+    });
+
+    $('.main-section__menu-item_cover').on('click', function() {
+        loadRivertime();
+    });
+
+    $('.main-section__menu-item_deephouse').on('click', function() {
+        loadDeephouse();
+    });
+
+    $('.main-section__mobile-menu').on('click', function(e) {
+        e.preventDefault();
+        $('.main-section__mobile').addClass('main-section__mobile_active');
+    });
+
+    $('.main-section__mobile-close').on('click', function(e) {
+        e.preventDefault();
+        $('.main-section__mobile').removeClass('main-section__mobile_active');
+    });
+
+    $('.main-section__mobile-item').on('click', function(e) {
+        $('.main-section__mobile').removeClass('main-section__mobile_active');
+        if ($(this).hasClass('main-section__mobile-item_solo')) {
+            loadSolo(true);
+        } else if ($(this).hasClass('main-section__mobile-item_cover')) {
+            loadRivertime(true);
+        } else {
+            loadDeephouse(true);
+        }
+    })
+
+    function loadSolo(mobile) {
         window.location.hash = '';
         $('.main-section').addClass('disable-animation');
         $('.main-container').removeClass('main-container_deephouse');
         $('.main-container').removeClass('main-container_rivertime');
         setSectionClasses($('.voice, .gallery, .rivertime'), $('.members, .rivertime-video, .deephouse, .deephouse-video'));
-        setMenuClasses($('.main-section__menu-item_solo'));
+        !mobile ? setMenuClasses($('.main-section__menu-item_solo')) : setMobileMenuClasses($('.main-section__mobile-item_solo'));
         setTimeout(() => $('.gallery__slider').slick('refresh'), 100);
-    });
+    }
 
-    $('.main-section__menu-item_cover').on('click', function() {
+    function loadRivertime(mobile) {
         window.location.hash = '#rivertime';
         $('.main-section').addClass('disable-animation');
         $('.main-container').removeClass('main-container_deephouse');
         $('.main-container').addClass('main-container_rivertime');
-        setMenuClasses($('.main-section__menu-item_cover'));
+        !mobile ? setMenuClasses($('.main-section__menu-item_cover')) : setMobileMenuClasses($('.main-section__mobile-item_cover'));
         setSectionClasses($('.members, .rivertime-video, .deephouse'), $('.voice, .gallery, .rivertime, .deephouse-video'));
         loadRivertimeSection();
+    }
 
-    });
-
-    $('.main-section__menu-item_deephouse').on('click', function() {
+    function loadDeephouse(mobile) {
         window.location.hash = '#deephousesax';
         $('.main-section').addClass('disable-animation');
         $('.main-container').addClass('main-container_deephouse');
         $('.main-container').removeClass('main-container_rivertime');
-        setMenuClasses($('.main-section__menu-item_deephouse'));
+        !mobile ? setMenuClasses($('.main-section__menu-item_deephouse')) : setMobileMenuClasses($('.main-section__mobile-item_deephouse'));
         setSectionClasses($('.deephouse-video'), $('.voice, .gallery, .rivertime, .members, .rivertime-video, .deephouse'));
         loadDeephouseSection();
-    });
+    }
 
     function initSliders() {
         $('.gallery__slider').slick({
@@ -241,6 +307,16 @@ $(function() {
             fade: false,
             infinite: false,
             lazyLoad: 'ondemand',
+            edgeFriction: 0.05,
+            responsive: [{
+                breakpoint: 900,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1.2,
+                    variableWidth: true,
+                    centerMode: true,
+                }
+            }, ]
         });
 
         $('.rivertime-video__slider').slick({
@@ -251,7 +327,13 @@ $(function() {
             nextArrow: $('.rivertime-video__slider-arr_right'),
             fade: false,
             asNavFor: '.rivertime-video__nav',
-            infinite: true
+            infinite: true,
+            responsive: [{
+                breakpoint: 900,
+                settings: {
+                    arrows: false,
+                }
+            }, ]
         });
 
         $('.rivertime-video__nav').slick({
@@ -261,7 +343,20 @@ $(function() {
             dots: false,
             arrows: false,
             centerMode: false,
-             asNavFor: '.rivertime-video__slider',
+            asNavFor: '.rivertime-video__slider',
+            responsive: [{
+                    breakpoint: 900,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 670,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
         });
 
         $('.deephouse-video__slider').slick({
@@ -272,7 +367,13 @@ $(function() {
             nextArrow: $('.deephouse-video__slider-arr_right'),
             fade: false,
             asNavFor: '.deephouse-video__nav',
-            infinite: true
+            infinite: true,
+            responsive: [{
+                breakpoint: 900,
+                settings: {
+                    arrows: false,
+                }
+            }, ]
         });
 
         $('.deephouse-video__nav').slick({
@@ -283,6 +384,19 @@ $(function() {
             centerMode: false,
             focusOnSelect: true,
             asNavFor: '.deephouse-video__slider',
+            responsive: [{
+                    breakpoint: 900,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 670,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                },
+            ]
         });
 
         $('.members-info__slider').slick({
@@ -294,7 +408,27 @@ $(function() {
             focusOnSelect: true,
             prevArrow: $('.members__nav-arr_left'),
             nextArrow: $('.members__nav-arr_right'),
-            draggable: false
+            draggable: false,
+            responsive: [{
+                    breakpoint: 1192,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 900,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 570,
+                    settings: {
+                        slidesToShow: 2,
+
+                    }
+                },
+            ]
         });
     }
 
@@ -331,6 +465,11 @@ $(function() {
     function setMenuClasses(activeElem) {
         activeElem.addClass('main-section__menu-item_active');
         activeElem.siblings().removeClass('main-section__menu-item_active');
+    }
+
+    function setMobileMenuClasses(activeElem) {
+        activeElem.addClass('main-section__mobile-item_active');
+        activeElem.siblings().removeClass('main-section__mobile-item_active');
     }
 
     function setSectionClasses(enabledSections, disabledSections) {

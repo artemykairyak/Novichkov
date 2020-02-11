@@ -46,6 +46,26 @@
             <video class="main-container__videobg" src="img/deephouse.webm" muted loop autoplay poster="img/deephouse.jpg"></video>
             <section class="section main-section disable-animation">
                 <div class="main-section__wrapper">
+                    <a href="#" class="main-section__mobile-menu">
+                        <span class="main-section__mobile-menu-icon">
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <span class="main-section__mobile-menu-label">Меню</span></a>
+                    <menu class="main-section__mobile">
+                        <a href="#" class="main-section__mobile-close">
+                            <span></span>
+                            <span></span>
+                        </a>
+                        <div class="main-section__mobile-table">
+                            <a href="#" class="main-section__mobile-item 
+                        main-section__mobile-item_solo
+                        main-section__mobile-item_active">Сольно</a>
+                            <a href="#rivertime" class="main-section__mobile-item main-section__mobile-item_cover">Кавер-группа</a>
+                            <a href="#deephousesax" class="main-section__mobile-item main-section__mobile-item_deephouse">DeepHouseSax</a>
+                        </div>
+                        <a href="#" class="main-section__mobile-orderbtn">Оставить заявку</a>
+                    </menu>
                     <menu class="main-section__menu main-section__menu_soloscreen">
                         <a href="#" class="main-section__menu-item 
                         main-section__menu-item_solo
@@ -118,13 +138,11 @@
                             revealator-duration5 revealator-once revealator-delay2">Голос, который<br>
                         покоряет сердца</h2>
                     <p class="voice__genres revealator-slideup
-                            revealator-duration5 revealator-once revealator-delay2"><span class="voice__genres-title">Репертуар: </span>Джаз, Поп, Реп</p>
+                            revealator-duration5 revealator-once revealator-delay2"><span class="voice__genres-title">Стили: </span>Джаз, Поп, Соул</p>
                     <p class="voice__desc revealator-slideup
                             revealator-duration5 revealator-once revealator-delay2">
-                        DeepHouseSAX<br>
-                        Мы — музыкальная группа, состоящая из 2-х артистов.<br>
-                        Это DJ, одержимо играющий на синтезаторе и мульти-саксофонист, создающий этническую музыку с помощью саксофона и перкусионных инструментов: дарбука, конго и бонги.<br>
-                        Создаем крутую музыку исключительно в стиле Deep & House.
+                        Профессиональный музыкант, вокалист, саксофонист, композитор. Участник шоу-проекта «Голос», резидент «SO-HO».
+                        Потрясающая энергетика и тембр его голоса не оставят равнодушным ни одного слушателя.
                     </p>
                     <p class="voice__video-title title revealator-slideup
                             revealator-duration5 revealator-delay2 revealator-once">Видео</p>
@@ -279,22 +297,22 @@
                     <div class="gallery__slide">
                         <img src="img/gallery/2.jpg" alt="">
                     </div>
-                     <div class="gallery__slide">
+                    <div class="gallery__slide">
                         <img src="img/gallery/3.jpg" alt="">
                     </div>
-                     <div class="gallery__slide">
+                    <div class="gallery__slide">
                         <img src="img/gallery/4.jpg" alt="">
                     </div>
-                     <div class="gallery__slide">
+                    <div class="gallery__slide">
                         <img src="img/gallery/5.jpg" alt="">
                     </div>
-                     <div class="gallery__slide">
+                    <div class="gallery__slide">
                         <img src="img/gallery/6.JPG" alt="">
                     </div>
-                     <div class="gallery__slide">
+                    <div class="gallery__slide">
                         <img src="img/gallery/7.jpg" alt="">
                     </div>
-                     <div class="gallery__slide">
+                    <div class="gallery__slide">
                         <img src="img/gallery/8.jpg" alt="">
                     </div>
                 </div>
@@ -391,22 +409,43 @@
                     <div class="order-form__container order-form__container_top">
                         <div class="order-form__input-container order-form__input-container_name ">
                             <input type="text" name="name" class="order-form__input order-form__name">
-                            <span class="svg order-form__error" data-src="img/icons/error.svg"></span>
-                            <span class="svg order-form__success" data-src="img/icons/success.svg"></span>
+                            <svg class="order-form__error" width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0001 0L0.00976562 22.5H25.9905L13.0001 0ZM13.0001 2L1.74182 21.5H24.2585L13.0001 2Z" fill="#FF3030" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 19V13H13.5V19H12.5Z" fill="#FF3030" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 11V10H13.5V11H12.5Z" fill="#FF3030" />
+                            </svg>
+                            <svg class="order-form__success" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12.5" cy="12.5" r="12" stroke="#2CFF0A" />
+                                <path d="M7 11.3481L11.9788 16.3269L18.5 8.5" stroke="#2CFF0A" />
+                            </svg>
                             <span class="order-form__error-msg">Не введено имя</span>
                         </div>
                         <div class="order-form__input-container order-form__input-container_date">
                             <input type="text" name="date" class="order-form__input order-form__date">
-                            <span class="svg order-form__error" data-src="img/icons/error.svg"></span>
-                            <span class="svg order-form__success" data-src="img/icons/success.svg"></span>
+                            <svg class="order-form__error" width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0001 0L0.00976562 22.5H25.9905L13.0001 0ZM13.0001 2L1.74182 21.5H24.2585L13.0001 2Z" fill="#FF3030" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 19V13H13.5V19H12.5Z" fill="#FF3030" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 11V10H13.5V11H12.5Z" fill="#FF3030" />
+                            </svg>
+                            <svg class="order-form__success" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12.5" cy="12.5" r="12" stroke="#2CFF0A" />
+                                <path d="M7 11.3481L11.9788 16.3269L18.5 8.5" stroke="#2CFF0A" />
+                            </svg>
                             <span class="order-form__error-msg">Неправильно введена дата</span>
                         </div>
                     </div>
                     <div class="order-form__container order-form__container_bottom">
                         <div class="order-form__input-container order-form__input-container_phone">
                             <input type="text" name="phone" class="order-form__input order-form__phone">
-                            <span class="svg order-form__error" data-src="img/icons/error.svg"></span>
-                            <span class="svg order-form__success" data-src="img/icons/success.svg"></span>
+                            <svg class="order-form__error" width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0001 0L0.00976562 22.5H25.9905L13.0001 0ZM13.0001 2L1.74182 21.5H24.2585L13.0001 2Z" fill="#FF3030" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 19V13H13.5V19H12.5Z" fill="#FF3030" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 11V10H13.5V11H12.5Z" fill="#FF3030" />
+                            </svg>
+                            <svg class="order-form__success" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12.5" cy="12.5" r="12" stroke="#2CFF0A" />
+                                <path d="M7 11.3481L11.9788 16.3269L18.5 8.5" stroke="#2CFF0A" />
+                            </svg>
                             <span class="order-form__error-msg">Неправильно введён номер телефона</span>
                         </div>
                     </div>
@@ -424,11 +463,36 @@
                     <p class="contacts__title title">Контакты</p>
                     <a href="tel:+79678019267" class="contacts__phone">+7 967 801 92 67</a>
                     <a href="mailto:anochok@mail.ru" target="_blank" class="contacts__email">anochok@mail.ru</a>
+                    <div class="contacts__table-soc">
+                        <a href="https://www.instagram.com/alex_novich_" target="_blank" class="contacts__table-soc-link contacts__table-soc-link_inst">
+                            <svg class="contacts__table-soc-icon" width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.5616 8.43579H12.6273C10.3915 8.43579 8.57251 10.2567 8.57251 12.4948V21.5205C8.57251 23.7586 10.3915 25.5795 12.6273 25.5795H21.5616C23.7973 25.5795 25.6163 23.7586 25.6163 21.5205V12.4948C25.6163 10.2567 23.7973 8.43579 21.5616 8.43579ZM17.1115 22.412C14.0809 22.412 11.6155 19.9702 11.6155 16.9689C11.6155 13.9675 14.0812 11.5257 17.1115 11.5257C20.1417 11.5257 22.6075 13.9675 22.6075 16.9689C22.6075 19.9702 20.142 22.412 17.1115 22.412ZM22.7053 12.5975C21.991 12.5975 21.4121 12.018 21.4121 11.303C21.4121 10.588 21.991 10.0085 22.7053 10.0085C23.4195 10.0085 23.9984 10.588 23.9984 11.303C23.9984 12.018 23.4195 12.5975 22.7053 12.5975Z" fill="#ffffff" />
+                                <path d="M17.1365 0C7.7576 0 0.154297 7.61125 0.154297 17C0.154297 26.3887 7.7576 34 17.1365 34C26.5155 34 34.1188 26.3887 34.1188 17C34.1188 7.61125 26.5155 0 17.1365 0ZM27.622 21.5206C27.622 24.866 24.9031 27.5874 21.5615 27.5874H12.6272C9.28528 27.5874 6.56672 24.8657 6.56672 21.5206V12.4949C6.56672 9.1495 9.28562 6.42809 12.6272 6.42809H21.5615C24.9034 6.42809 27.622 9.14984 27.622 12.4949V21.5206Z" fill="#ffffff" />
+                                <path d="M17.1115 13.5298C15.1847 13.5298 13.6174 15.0725 13.6174 16.9689C13.6174 18.8654 15.1847 20.4081 17.1115 20.4081C19.0383 20.4081 20.6056 18.8654 20.6056 16.9689C20.6056 15.0725 19.0383 13.5298 17.1115 13.5298Z" fill="#ffffff" />
+                            </svg>
+                        </a>
+                        <a href="https://vk.com/id18426389" target="_blank" class="contacts__table-soc-link contacts__table-soc-link_vk">
+                            <svg class="contacts__table-soc-icon" width="33" height="34" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1357 0C7.30841 0 0.152344 7.61125 0.152344 17C0.152344 26.3887 7.30841 34 16.1357 34C24.9629 34 32.119 26.3887 32.119 17C32.119 7.61125 24.9629 0 16.1357 0ZM23.0668 19.247C23.1926 19.4125 23.4917 19.7349 23.965 20.2147H23.976L23.987 20.2261L23.998 20.2382L24.0204 20.2616C25.0628 21.2917 25.7687 22.1608 26.1386 22.8686C26.1609 22.9075 26.1849 22.9572 26.2108 23.0161C26.2364 23.0751 26.2624 23.1792 26.2883 23.3285C26.3139 23.4784 26.312 23.6115 26.2828 23.7294C26.2533 23.847 26.1609 23.9559 26.0057 24.0538C25.8504 24.1524 25.6323 24.2013 25.3513 24.2013L22.5122 24.2489C22.3349 24.2882 22.1278 24.2686 21.8912 24.19C21.6543 24.111 21.4624 24.0245 21.3146 23.9304L21.0926 23.7883C20.8705 23.6232 20.6119 23.3716 20.3163 23.0337C20.0203 22.6955 19.7672 22.3908 19.5565 22.1194C19.3458 21.8481 19.1202 21.6206 18.8797 21.4351C18.6392 21.2503 18.4305 21.1893 18.2532 21.2524C18.2312 21.2607 18.2013 21.2745 18.1644 21.2938C18.1271 21.3134 18.0646 21.37 17.9757 21.4648C17.8869 21.5592 17.8075 21.6754 17.7372 21.8126C17.6669 21.9505 17.604 22.155 17.5485 22.4263C17.4931 22.6972 17.4688 23.0023 17.4766 23.3405C17.4766 23.4581 17.4633 23.5667 17.4377 23.6649C17.4118 23.7632 17.3839 23.8359 17.3544 23.8828L17.31 23.9418C17.1768 24.0917 16.981 24.1779 16.7224 24.2013H15.4469C14.9218 24.2331 14.3822 24.1683 13.8279 24.0069C13.2736 23.8452 12.7871 23.6373 12.3697 23.3815C11.9515 23.1264 11.571 22.8668 11.2274 22.6035C10.8835 22.3397 10.6229 22.1139 10.4456 21.9254L10.1685 21.642C10.0946 21.5637 9.99283 21.4455 9.8635 21.2879C9.73418 21.1307 9.47001 20.7732 9.07069 20.2147C8.67137 19.6562 8.2795 19.0629 7.89508 18.4334C7.51067 17.8043 7.05786 16.9745 6.53634 15.9444C6.01515 14.9146 5.53285 13.8453 5.08912 12.7362C5.04471 12.6107 5.02235 12.5045 5.02235 12.418C5.02235 12.3318 5.03337 12.2687 5.05573 12.2291L5.10014 12.1584C5.21099 12.0088 5.42167 11.934 5.73219 11.934L8.77087 11.9105C8.85968 11.9264 8.94461 11.9519 9.02596 11.9874C9.10732 12.0226 9.16663 12.056 9.20358 12.0874L9.25901 12.1229C9.37731 12.2098 9.4658 12.3353 9.52512 12.5004C9.67292 12.8941 9.84308 13.3009 10.0353 13.7215C10.2275 14.1421 10.3792 14.4627 10.49 14.6826L10.6673 15.025C10.8816 15.4966 11.0887 15.9058 11.2884 16.2516C11.4884 16.5977 11.6673 16.8673 11.8264 17.0596C11.9852 17.2524 12.1385 17.404 12.2867 17.5137C12.4345 17.624 12.5602 17.6791 12.664 17.6791C12.7674 17.6791 12.8672 17.6595 12.9635 17.6202C12.978 17.6123 12.9965 17.5926 13.0189 17.5612C13.0412 17.5299 13.0853 17.4433 13.1521 17.3013C13.2185 17.16 13.2685 16.9752 13.3018 16.747C13.3352 16.5194 13.3702 16.2009 13.4072 15.792C13.4441 15.3828 13.4441 14.8915 13.4072 14.3175C13.3923 14.0028 13.3589 13.716 13.3074 13.4564C13.2555 13.1971 13.2036 13.0161 13.1521 12.9138L13.0853 12.7724C12.9006 12.5052 12.5865 12.336 12.1428 12.2649C12.0465 12.2498 12.065 12.1553 12.1982 11.9823C12.324 11.8326 12.4643 11.7151 12.6196 11.6282C13.0114 11.4241 13.895 11.3297 15.2703 11.3448C15.8764 11.3531 16.3755 11.4038 16.7674 11.4982C16.9152 11.5379 17.039 11.5906 17.1389 11.6575C17.2387 11.724 17.3145 11.8188 17.3664 11.9402C17.4179 12.0622 17.4568 12.1881 17.4827 12.3177C17.5087 12.4477 17.5216 12.6269 17.5216 12.8545C17.5216 13.0827 17.5181 13.2992 17.5106 13.5033C17.5032 13.7077 17.4941 13.9852 17.4831 14.3348C17.4721 14.6847 17.4662 15.0094 17.4662 15.308C17.4662 15.3949 17.4627 15.5597 17.4552 15.8034C17.4477 16.0475 17.4455 16.236 17.4497 16.3695C17.4533 16.5032 17.4662 16.6628 17.4883 16.8473C17.5106 17.0321 17.5531 17.1858 17.616 17.3072C17.6785 17.4292 17.7618 17.5254 17.8655 17.5961C17.9245 17.6123 17.9874 17.6278 18.0542 17.6436C18.1206 17.6591 18.2166 17.6164 18.3423 17.5137C18.4678 17.4116 18.6084 17.2758 18.7637 17.1069C18.919 16.9383 19.1112 16.6749 19.3403 16.3167C19.5692 15.9596 19.8207 15.5366 20.0942 15.0488C20.538 14.231 20.9334 13.3461 21.2809 12.3946C21.3104 12.3156 21.3473 12.247 21.3917 12.1881C21.4361 12.1288 21.4766 12.0874 21.5136 12.064L21.558 12.0285C21.5726 12.0205 21.5911 12.0109 21.6134 11.9991C21.6358 11.9878 21.6838 11.9757 21.7577 11.9636C21.8316 11.9523 21.9055 11.9502 21.9797 11.9581L25.1736 11.934C25.4618 11.895 25.6984 11.9047 25.8831 11.9633C26.0679 12.0222 26.1826 12.0874 26.227 12.1581L26.2938 12.276C26.4637 12.7796 25.9094 13.9349 24.6304 15.7438C24.4528 15.9958 24.2123 16.3302 23.9095 16.7466C23.3329 17.5333 23.0004 18.0484 22.9122 18.2928C22.7858 18.6144 22.8376 18.933 23.0668 19.247Z" fill="#ffffff" />
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCEnznwwPDCfUWS8klel_poA/featured" target="_blank" class="contacts__table-soc-link contacts__table-soc-link_youtube">
+                            <svg class="contacts__table-soc-icon" width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.0083 19.4877L21.2675 16.695L16.0083 13.9587V19.4877Z" fill="#ffffff" />
+                                <path d="M17.9354 0C8.55645 0 0.953125 7.61125 0.953125 17C0.953125 26.3887 8.55645 34 17.9354 34C27.3144 34 34.9177 26.3887 34.9177 17C34.9177 7.61125 27.3144 0 17.9354 0ZM27.4174 20.9594C27.1911 22.3935 26.4986 23.1723 25.0421 23.3371C23.4146 23.5212 19.7552 23.606 18.1286 23.606C16.4456 23.606 13.0417 23.5353 11.3425 23.3936C9.88199 23.2719 8.88534 22.4552 8.68456 21.0018C8.53854 19.9434 8.44418 18.6854 8.44418 16.6852C8.44418 14.4585 8.52442 13.5164 8.7128 12.5104C8.98177 11.0749 9.6664 10.3795 11.2292 10.2179C12.8692 10.0479 14.4196 9.96309 17.8882 9.96309C19.584 9.96309 23.24 10.051 24.9288 10.2037C26.4038 10.3371 27.2348 11.2404 27.417 12.6804C27.5441 13.6853 27.6574 15.1239 27.6574 16.6715C27.6578 19.3884 27.4174 20.9594 27.4174 20.9594Z" fill="#ffffff" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="rivertime">
             <div class="wrapper rivertime-wrapper">
+                <div class="rivertime__mobile-labels">
+                    <p class="rivertime__subtitle">Кавер-группа</p>
+                    <p class="rivertime__title">Rivertime</p>
+                    <span class="svg rivertime__mobile-arrow" data-src="img/icons/rivertime-mob-arr.svg"></span>
+                </div>
                 <div class="rivertime__pic revealator-fade
                             revealator-duration3 revealator-once revealator-delay1">
                     <img class="rivertime__photo" src="img/rivertimebg.jpg" alt="">
@@ -445,6 +509,10 @@
         </section>
         <section class="deephouse section_hidden">
             <div class="wrapper deephouse-wrapper">
+                <div class="deephouse__mobile-labels">
+                    <p class="deephouse__title">DeepHouseSax</p>
+                    <span class="svg deephouse__mobile-arrow" data-src="img/icons/rivertime-mob-arr.svg"></span>
+                </div>
                 <div class="deephouse__pic">
                     <img class="deephouse__photo" src="img/deephouse.jpg" alt="">
                     <div class="deephouse__labels">
