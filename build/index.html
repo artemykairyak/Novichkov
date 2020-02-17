@@ -8,7 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Описание страницы для SEO и соцсетей">
     <meta name="keywords" content="ключевые, слова, через, запятую">
-    <link rel="shortcut icon" type='image/png' href="img/icons/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png">
     <title>Александр Новичков</title>
     <script src="vendors/js/preloader.js"></script>
     <h1 style="display: none">Александр Новичков</h1>
@@ -16,6 +18,8 @@
     <link rel="stylesheet" href="vendors/css/slick.css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="vendors/css/fm.revealator.jquery.css">
+    <link rel="stylesheet" href="vendors/css/datepicker.css">
+    <link rel="stylesheet" href="vendors/css/simple-lightbox.css">
 </head>
 
 <body>
@@ -141,8 +145,7 @@
                             revealator-duration5 revealator-once revealator-delay2"><span class="voice__genres-title">Стили: </span>Джаз, Поп, Соул</p>
                     <p class="voice__desc revealator-slideup
                             revealator-duration5 revealator-once revealator-delay2">
-                        Профессиональный музыкант, вокалист, саксофонист, композитор. Участник шоу-проекта «Голос», резидент «SO-HO».
-                        Потрясающая энергетика и тембр его голоса не оставят равнодушным ни одного слушателя.
+                        Профессиональный музыкант, вокалист, саксофонист, композитор. Участник шоу-проекта &laquo;Голос&raquo;, резидент &laquo;SO-HO&raquo;. Потрясающая энергетика и&nbsp;тембр его голоса не&nbsp;оставят равнодушным ни&nbsp;одного слушателя.
                     </p>
                     <p class="voice__video-title title revealator-slideup
                             revealator-duration5 revealator-delay2 revealator-once">Видео</p>
@@ -176,62 +179,63 @@
         <section class="members section_hidden">
             <div class="wrapper members-wrapper">
                 <div class="members__slider-container">
-                    <div class="members__slider-nav">
-                        <div class="members__slider-count">
-                            <span class="members__slider-count_cur">01</span>/<span class="members__slider-count_total">01</span>
-                        </div>
-                        <div class="members__nav">
-                            <svg class="members__nav-arr  members__nav-arr_left" width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g opacity="0.5">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M34.8953 40.0001L42.9669 48.0717L42.2598 48.7788L33.4811 40.0001L42.2598 31.2215L42.9669 31.9286L34.8953 40.0001Z" fill="white" />
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M40.3379 1C18.7988 1 1.3379 18.4609 1.3379 40C1.3379 61.5391 18.7988 79 40.3379 79C61.877 79 79.3379 61.5391 79.3379 40C79.3379 18.4609 61.877 1.00001 40.3379 1ZM40.3379 4.13248e-06C18.2465 2.20119e-06 0.337904 17.9086 0.337902 40C0.3379 62.0914 18.2465 80 40.3379 80C62.4293 80 80.3379 62.0914 80.3379 40C80.3379 17.9086 62.4293 6.06377e-06 40.3379 4.13248e-06Z" fill="white" />
-                                </g>
-                            </svg>
-                            <svg class="members__nav-arr members__nav-arr_right" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g opacity="0.5">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M45.4426 39.9999L37.371 31.9283L38.0781 31.2212L46.8568 39.9999L38.0781 48.7785L37.371 48.0714L45.4426 39.9999Z" fill="white" />
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M40 79C61.5391 79 79 61.5391 79 40C79 18.4609 61.5391 1 40 1C18.4609 0.999996 0.999997 18.4609 0.999993 40C0.999989 61.5391 18.4609 79 40 79ZM40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 3.94226e-06 40 7.96827e-08C17.9086 -3.7829e-06 -3.13124e-06 17.9086 -6.99382e-06 40C-1.08564e-05 62.0914 17.9086 80 40 80Z" fill="white" />
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
                     <div class="members-info">
-                        <p class="members-info__genres"><span class="members-info__genres-title">Репертуар: </span>Джаз, Поп, Шансон</p>
+                        <p class="members-info__genres"><span class="members-info__genres-title">Стили: </span>Джаз, Поп, Soul</p>
                         <p class="members-info__desc">
-                            Профессиональный музыкант, вокалист, саксофонист, композитор. Участник шоу-проекта «Голос», резидент «SO-HO» Тембр его голоса не оставит равнодушным ни одного слушателя.
-                            Потрясающая энергетика и тембр его голоса не оставят равнодушным ни одного слушателя.
+                            Кавер-группа, создаем профессиональное MUSIC&nbsp;SHOW в&nbsp;формате LIVE. Постоянно обновляем плейлист самыми популярными ХИТами российских и&nbsp;зарубежных исполнителей. Так&nbsp;же, подбираем другие вариации программ для открытия автосалонов, выставок, показов мод, городских мероприятий.
                         </p>
                         <p class="members-info__group title">Состав</p>
-                        <div class="members-info__slider">
-                            <div class="members-info__slide">
-                                <img src="img/members/Александр_Новичков.jpg" alt="">
-                                <span class="members-info__name">Александр Новичков</span>
-                                <span class="members-info__position">Вокал</span>
+                        <div class="members-info__container">
+                            <div class="members__slider-nav">
+                                <div class="members__slider-count">
+                                    <span class="members__slider-count_cur">01</span>/<span class="members__slider-count_total">01</span>
+                                </div>
+                                <div class="members__nav">
+                                    <svg class="members__nav-arr  members__nav-arr_left" width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g opacity="0.5">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M34.8953 40.0001L42.9669 48.0717L42.2598 48.7788L33.4811 40.0001L42.2598 31.2215L42.9669 31.9286L34.8953 40.0001Z" fill="white" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M40.3379 1C18.7988 1 1.3379 18.4609 1.3379 40C1.3379 61.5391 18.7988 79 40.3379 79C61.877 79 79.3379 61.5391 79.3379 40C79.3379 18.4609 61.877 1.00001 40.3379 1ZM40.3379 4.13248e-06C18.2465 2.20119e-06 0.337904 17.9086 0.337902 40C0.3379 62.0914 18.2465 80 40.3379 80C62.4293 80 80.3379 62.0914 80.3379 40C80.3379 17.9086 62.4293 6.06377e-06 40.3379 4.13248e-06Z" fill="white" />
+                                        </g>
+                                    </svg>
+                                    <svg class="members__nav-arr members__nav-arr_right" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g opacity="0.5">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M45.4426 39.9999L37.371 31.9283L38.0781 31.2212L46.8568 39.9999L38.0781 48.7785L37.371 48.0714L45.4426 39.9999Z" fill="white" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M40 79C61.5391 79 79 61.5391 79 40C79 18.4609 61.5391 1 40 1C18.4609 0.999996 0.999997 18.4609 0.999993 40C0.999989 61.5391 18.4609 79 40 79ZM40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 3.94226e-06 40 7.96827e-08C17.9086 -3.7829e-06 -3.13124e-06 17.9086 -6.99382e-06 40C-1.08564e-05 62.0914 17.9086 80 40 80Z" fill="white" />
+                                        </g>
+                                    </svg>
+                                </div>
                             </div>
-                            <div class="members-info__slide">
-                                <img src="img/members/Александр_Островский(Гитара).jpg" alt="">
-                                <span class="members-info__name">Александр Островский</span>
-                                <span class="members-info__position">Гитара</span>
-                            </div>
-                            <div class="members-info__slide">
-                                <img src="img/members/Артем_Земсков(Барабаны).jpg" alt="">
-                                <span class="members-info__name">Артём Земсков</span>
-                                <span class="members-info__position">Барабаны</span>
-                            </div>
-                            <div class="members-info__slide">
-                                <img src="img/members/Виктория_Кашерина(Клавиши).jpg" alt="">
-                                <span class="members-info__name">Виктория Кашерина</span>
-                                <span class="members-info__position">Клавиши</span>
-                            </div>
-                            <div class="members-info__slide">
-                                <img src="img/members/Татьяна_Грицаенко(Вокал).jpg" alt="">
-                                <span class="members-info__name">Татьяна Грицаенко</span>
-                                <span class="members-info__position">Вокал</span>
-                            </div>
-                            <div class="members-info__slide">
-                                <img src="img/members/Юлия_Граевская(вокал).jpg" alt="">
-                                <span class="members-info__name">Юлия Граевская</span>
-                                <span class="members-info__position">Вокал</span>
+                            <div class="members-info__slider">
+                                <div class="members-info__slide">
+                                    <img src="img/members/Александр_Новичков.jpg" alt="">
+                                    <span class="members-info__name">Александр Новичков</span>
+                                    <span class="members-info__position">Вокал</span>
+                                </div>
+                                <div class="members-info__slide">
+                                    <img src="img/members/Александр_Островский(Гитара).jpg" alt="">
+                                    <span class="members-info__name">Александр Островский</span>
+                                    <span class="members-info__position">Гитара</span>
+                                </div>
+                                <div class="members-info__slide">
+                                    <img src="img/members/Артем_Земсков(Барабаны).jpg" alt="">
+                                    <span class="members-info__name">Артём Земсков</span>
+                                    <span class="members-info__position">Барабаны</span>
+                                </div>
+                                <div class="members-info__slide">
+                                    <img src="img/members/Виктория_Кашерина(Клавиши).jpg" alt="">
+                                    <span class="members-info__name">Виктория Кашерина</span>
+                                    <span class="members-info__position">Клавиши</span>
+                                </div>
+                                <div class="members-info__slide">
+                                    <img src="img/members/Татьяна_Грицаенко(Вокал).jpg" alt="">
+                                    <span class="members-info__name">Татьяна Грицаенко</span>
+                                    <span class="members-info__position">Вокал</span>
+                                </div>
+                                <div class="members-info__slide">
+                                    <img src="img/members/Юлия_Граевская(вокал).jpg" alt="">
+                                    <span class="members-info__name">Юлия Граевская</span>
+                                    <span class="members-info__position">Вокал</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -291,30 +295,30 @@
                 </svg>
                 <div class="gallery__slider revealator-slideup
                             revealator-duration5 revealator-once revealator-delay1">
-                    <div class="gallery__slide">
+                    <a href="img/gallery/1.jpg" class="gallery__slide">
                         <img src="img/gallery/1.jpg" alt="">
-                    </div>
-                    <div class="gallery__slide">
+                    </a>
+                    <a href="img/gallery/2.jpg" class="gallery__slide">
                         <img src="img/gallery/2.jpg" alt="">
-                    </div>
-                    <div class="gallery__slide">
+                    </a>
+                    <a href="img/gallery/3.jpg" class="gallery__slide">
                         <img src="img/gallery/3.jpg" alt="">
-                    </div>
-                    <div class="gallery__slide">
+                    </a>
+                    <a href="img/gallery/4.jpg" class="gallery__slide">
                         <img src="img/gallery/4.jpg" alt="">
-                    </div>
-                    <div class="gallery__slide">
+                    </a>
+                    <a href="img/gallery/5.jpg" class="gallery__slide">
                         <img src="img/gallery/5.jpg" alt="">
-                    </div>
-                    <div class="gallery__slide">
+                    </a>
+                    <a href="img/gallery/6.jpg" class="gallery__slide">
                         <img src="img/gallery/6.JPG" alt="">
-                    </div>
-                    <div class="gallery__slide">
+                    </a>
+                    <a href="img/gallery/7.jpg" class="gallery__slide">
                         <img src="img/gallery/7.jpg" alt="">
-                    </div>
-                    <div class="gallery__slide">
+                    </a>
+                    <a href="img/gallery/8.jpg" class="gallery__slide">
                         <img src="img/gallery/8.jpg" alt="">
-                    </div>
+                    </a>
                 </div>
                 <svg class="gallery__slider-arr gallery__slider-arr_right revealator-slideup
                             revealator-duration5 revealator-once revealator-delay5" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -328,10 +332,9 @@
         <section class="deephouse-video section_hidden">
             <div class="wrapper deephouse-video-wrapper">
                 <div class="deephouse-video-info">
-                    <p class="deephouse-video-info__genres"><span class="deephouse-video-info__genres-title">Репертуар: </span>Джаз, Поп, Шансон</p>
+                    <p class="deephouse-video-info__genres"><span class="deephouse-video-info__genres-title">Стили: </span>Deep House</p>
                     <p class="deephouse-video-info__desc">
-                        Музыкальная группа, состоящая из 2-х артистов.<br>
-                        Это DJ, одержимо играющий на вертушках, и Мульти-Саксофониста, создающим этническую музыку с помощью Саксофона и перкусионных инструментов дарбука, конго и бонги. Создаем крутую музыку в стиле Deep & House.
+                        Проект создающий атмосферную deep house музыку посредствам&nbsp;Dj, cаксофона и&nbsp;перкусионных инструментов дарбука, конго и&nbsp;бонги.
                     </p>
                 </div>
                 <div class="deephouse-video__slider-wrapper">
@@ -386,13 +389,19 @@
                         <img src="img/clients/Alfa-Bank.png" class="clients__icon clients__icon_alfa" alt="">
                     </div>
                     <div class="clients__item">
-                        <img src="img/clients/Epam_Systems_Logo.png" class="clients__icon clients__icon_epam" alt="">
-                    </div>
-                    <div class="clients__item">
                         <img src="img/clients/logo_new_2017.png" class="clients__icon clients__icon_sber" alt="">
                     </div>
                     <div class="clients__item">
+                        <img src="img/clients/Epam_Systems_Logo.png" class="clients__icon clients__icon_epam" alt="">
+                    </div>
+                    <div class="clients__item">
+                        <img src="img/clients/image 9.png" class="clients__icon clients__icon_toyota" alt="">
+                    </div>
+                    <div class="clients__item">
                         <img src="img/clients/SoHo_2015_Logo.png" class="clients__icon clients__icon_soho" alt="">
+                    </div>
+                    <div class="clients__item">
+                        <img src="img/clients/image 10.png" class="clients__icon clients__icon_benz" alt="">
                     </div>
                 </div>
             </div>
@@ -401,7 +410,7 @@
             <div class="wrapper order-wrapper">
                 <div class="order__title revealator-slideup
                             revealator-duration5 revealator-once revealator-delay4">
-                    <p class="order__desc">Оформите заявку онлайн и получите скидку на выступление</p>
+                    <p class="order__desc">Оформите заявку онлайн и&nbsp;получите скидку на&nbsp;выступление</p>
                     <p class="order__sale">10%</p>
                 </div>
                 <form action="text.php" method="POST" class="order-form revealator-slideup
@@ -421,7 +430,7 @@
                             <span class="order-form__error-msg">Не введено имя</span>
                         </div>
                         <div class="order-form__input-container order-form__input-container_date">
-                            <input type="text" name="date" class="order-form__input order-form__date">
+                            <input type="text" autocomplete="off" name="date" class="order-form__input order-form__date">
                             <svg class="order-form__error" width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0001 0L0.00976562 22.5H25.9905L13.0001 0ZM13.0001 2L1.74182 21.5H24.2585L13.0001 2Z" fill="#FF3030" />
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 19V13H13.5V19H12.5Z" fill="#FF3030" />
@@ -531,6 +540,8 @@
     <script src="vendors/js/jquery-3.4.1.min.js"></script>
     <script src="vendors/js/fm.revealator.jquery.js"></script>
     <script src="vendors/js/slick.min.js"></script>
+    <script src="vendors/js/datepicker.min.js"></script>
+    <script src="vendors/js/simple-lightbox.jquery.min.js"></script>
     <script src="js/scripts.js" type="text/javascript"></script>
 </body>
 

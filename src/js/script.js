@@ -1,5 +1,8 @@
 $(function() {
-    setTimeout(() => initSliders(), 100)
+    setTimeout(() => initSliders(), 100);
+
+    $('.order-form__date').datepicker({});
+    let lightbox = $('.gallery__slider a').simpleLightbox({ /* options */ });
 
     $('.members-info__slider').on('init', function(event, slick) {
         $('.members__slider-count_total').text('0' + slick.slideCount);
@@ -9,7 +12,12 @@ $(function() {
         loadSlide($(this))
     });
 
+    $('.rivertime-video__slider, .deephouse-video__slider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        $(this).find('.video__video').remove();
+    });
+
     $('.rivertime-video__slider').on('afterChange', function(event, slick, currentSlide) {
+
         if (currentSlide + 1 === slick.slideCount) {
             toggleArrow('rivertime-video__slider', 'right', true);
         } else {
@@ -44,20 +52,17 @@ $(function() {
         });
     });
 
-    function showModal() {
-        $('.modal-success').addClass('modal_active');
-        $('.modal-success').fadeIn(300);
-        $('.overlay').show();
-    }
     $('.order-form').on('submit', function(e) {
         e.preventDefault();
         if (validateForm($(this))) {
+            console.log('valid')
             let data = $(this).serializeArray()
             $.ajax({
-                url: 'https://cors-anywhere.herokuapp.com/http://novichkov.asap-lp.ru/mail/index.php',
+                url: 'http://novichkov.asap-lp.ru/mail/index.php',
                 type: "POST",
                 data: data,
                 success: function(data) {
+                    console.log('suc', data)
                     showModal();
 
                 },
@@ -143,6 +148,7 @@ $(function() {
     });
 
     $('.order-form__input').on('blur', function() {
+        console.log($(this))
         if (!$(this).val()) {
             $(this).parent().removeClass('order-form__input-container_focused');
         }
@@ -150,7 +156,7 @@ $(function() {
         if (($(this).hasClass('order-form__phone') &&
                 !$(this).val().match(/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/) ||
                 $(this).hasClass('order-form__name') && !$(this).val() ||
-                $(this).hasClass('order-form__date') && !$(this).val().match(/^[0-9]+$/))) {
+                $(this).hasClass('order-form__date') && !$(this).data('datepicker').el.value)) {
             $(this).parent().addClass('order-form__input-container_error');
             $(this).parent().removeClass('order-form__input-container_success');
         } else {
@@ -265,7 +271,13 @@ $(function() {
         } else {
             loadDeephouse(true);
         }
-    })
+    });
+
+    function showModal() {
+        $('.modal-success').addClass('modal_active');
+        $('.modal-success').fadeIn(300);
+        $('.overlay').show();
+    }
 
     function loadSolo(mobile) {
         window.location.hash = '';
@@ -339,7 +351,6 @@ $(function() {
         $('.rivertime-video__nav').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
-            respondTo: 'slider',
             dots: false,
             arrows: false,
             centerMode: false,
@@ -437,7 +448,14 @@ $(function() {
         if (!form.find('.order-form__input-container_error').length) {
             let inputs = form.find('.order-form__input');
             inputs.each((i, item) => {
-                if (!$(item).val()) {
+
+                if ($(item).hasClass('order-form__date') && !$(item).data('datepicker').el.value) {
+                    console.log(111)
+                    $(item).parent().addClass('order-form__input-container_error');
+                    $(item).parent().removeClass('order-form__input-container_success');
+                    correct = false;
+                }
+                if (!$(item).hasClass('order-form__date') && !$(item).val()) {
                     $(item).parent().addClass('order-form__input-container_error');
                     $(item).parent().removeClass('order-form__input-container_success');
                     correct = false;
@@ -451,7 +469,7 @@ $(function() {
 
     function loadSlide(slide) {
         let src = $(slide).attr('data-src');
-        $(slide).html(`<iframe class="video__video" src="${src}&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
+        $(slide).find('svg').after(`<iframe class="video__video" src="${src}&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
     }
 
     function toggleArrow(slider, dir, disable) {
