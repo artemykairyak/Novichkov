@@ -1,8 +1,13 @@
 $(function() {
-    setTimeout(() => initSliders(), 100);
+    if (window.navigator.userAgent.indexOf('Edge') !== -1) {
+        setTimeout(() => initSliders(), 300);
+    } else {
+        setTimeout(() => initSliders(), 100);
+    }
 
     $('.order-form__date').datepicker({});
-    let lightbox = $('.gallery__slider a').simpleLightbox({ /* options */ });
+    let galleryLightbox = $('.gallery__slider a').simpleLightbox({});
+    let membersLightbox = $('.members-info__slider a').simpleLightbox({});
 
     $('.members-info__slider').on('init', function(event, slick) {
         $('.members__slider-count_total').text('0' + slick.slideCount);
@@ -55,16 +60,13 @@ $(function() {
     $('.order-form').on('submit', function(e) {
         e.preventDefault();
         if (validateForm($(this))) {
-            console.log('valid')
             let data = $(this).serializeArray()
             $.ajax({
                 url: 'http://novichkov.asap-lp.ru/mail/index.php',
                 type: "POST",
                 data: data,
                 success: function(data) {
-                    console.log('suc', data)
                     showModal();
-
                 },
                 error: function(error) {
                     console.log(error)
@@ -148,7 +150,6 @@ $(function() {
     });
 
     $('.order-form__input').on('blur', function() {
-        console.log($(this))
         if (!$(this).val()) {
             $(this).parent().removeClass('order-form__input-container_focused');
         }
@@ -297,6 +298,9 @@ $(function() {
         !mobile ? setMenuClasses($('.main-section__menu-item_cover')) : setMobileMenuClasses($('.main-section__mobile-item_cover'));
         setSectionClasses($('.members, .rivertime-video, .deephouse'), $('.voice, .gallery, .rivertime, .deephouse-video'));
         loadRivertimeSection();
+         if (window.navigator.userAgent.indexOf('Edge') !== -1) {
+            setTimeout(() => $('.members__slider').slick('refresh'), 100);
+         }
     }
 
     function loadDeephouse(mobile) {
@@ -450,7 +454,6 @@ $(function() {
             inputs.each((i, item) => {
 
                 if ($(item).hasClass('order-form__date') && !$(item).data('datepicker').el.value) {
-                    console.log(111)
                     $(item).parent().addClass('order-form__input-container_error');
                     $(item).parent().removeClass('order-form__input-container_success');
                     correct = false;

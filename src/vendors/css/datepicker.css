@@ -46,7 +46,8 @@
   height: 32px;
   z-index: 1; }
   .datepicker--cell.-focus- {
-    background: #f0f0f0; }
+    background: #f0f0f0; 
+    color: #000;}
   .datepicker--cell.-current- {
     color: #4a4a4a; }
     .datepicker--cell.-current-.-focus- {
@@ -342,7 +343,8 @@
     color: #9c9c9c;
     margin-left: 5px; }
   .datepicker--nav-title:hover {
-    background: #f0f0f0; }
+    background: #f0f0f0; 
+    color: #9c9c9c;}
   .datepicker--nav-title.-disabled- {
     cursor: default;
     background: none; }

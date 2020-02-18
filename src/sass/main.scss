@@ -14,6 +14,7 @@ html {
     font-size: 14px;
     overflow-x: hidden;
     color: #fff !important;
+    background: #e7e5e8;
 }
 
 body {
@@ -30,7 +31,7 @@ body {
 section {
     width: 100%;
     position: relative;
-    background: #fff;
+    background: rgb(25, 26, 28);
 
     &:not(.main-section) * {
         transition: all .3s ease;
@@ -516,24 +517,6 @@ h1 {
             animation: none;
             bottom: 17%;
         }
-
-        &__title {
-            /* &-name {
-                opacity: 1;
-                animation: none;
-            }
-
-            &-lastname {
-                transition: all 0s;
-                opacity: 1;
-                animation: none;
-            }*/
-        }
-
-        /*&__role {
-            opacity: 0.66;
-            animation: none;
-        }*/
     }
 }
 
@@ -926,9 +909,20 @@ h1 {
 }
 
 .voice {
-    background: url(img/secsectbg.png) 0 0/contain no-repeat, linear-gradient(180deg, rgb(25, 26, 28), rgb(25, 26, 28));
+    background: url(img/secsectbg.png) 0 0/cover no-repeat, linear-gradient(180deg, rgb(25, 26, 28), rgb(25, 26, 28));
     padding-top: 140px;
     padding-bottom: 140px;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: linear-gradient(180deg, transparent 0%, rgb(25, 26, 28) 70%);
+    }
 
     &-wrapper {
         display: -webkit-flex;
@@ -1148,7 +1142,7 @@ h1 {
 .gallery {
 
     &__slider-arr {
-        transform: translateY(-25%)!important;
+        transform: translateY(-25%) !important;
     }
 
     &__slide {
@@ -1552,7 +1546,6 @@ h1 {
         justify-content: center;
         align-items: center;
         margin-bottom: 23px;
-        /*padding-top: 60px;*/
         display: none;
     }
 
@@ -1574,6 +1567,7 @@ h1 {
             height: 100vh;
             overflow: hidden;
             z-index: 1000;
+            transform-origin: bottom;
 
             .rivertime__photo {
                 bottom: 0;
@@ -1642,6 +1636,8 @@ h1 {
         position: absolute;
         top: 50px;
         left: 50%;
+        width: 41px;
+        height: 8px;
 
         path {
             fill: #fff;
@@ -1745,7 +1741,7 @@ h1 {
             font-weight: 300;
             line-height: 1.8;
             opacity: 0.7 !important;
-            width: 50%;
+            width: 45%;
             margin-bottom: 66px;
             margin-left: 30%;
         }
@@ -1774,6 +1770,7 @@ h1 {
 
             .slick-slide {
                 margin-right: 40px;
+                z-index: 3;
             }
         }
 
@@ -1801,6 +1798,7 @@ h1 {
             display: inline-block;
             font-size: 20px;
             line-height: 177.6%;
+            color: #fff;
             margin-top: 15px;
         }
 
@@ -1810,10 +1808,11 @@ h1 {
             font-size: 14px;
             line-height: 177.6%;
             opacity: 0.4;
+            color: #fff;
         }
     }
 
-    .deephouse-video-info { 
+    .deephouse-video-info {
         width: 70%;
     }
 }
@@ -2077,11 +2076,11 @@ h1 {
     }
 
     .deephouse-video__slide,
-    .gallery__slider,
     .deephouse-video__slider,
-    .gallery__slide,
     .rivertime-video__slide,
-    .rivertime-video__slider {
+    .rivertime-video__slider,
+    .gallery__slider,
+    .gallery__slide {
         height: 430px;
     }
 
@@ -2346,10 +2345,6 @@ h1 {
         height: 55vh;
     }
 
-    .gallery {
-        padding-bottom: 80px;
-    }
-
     .main-section__title_rivertime {
         font-size: 86px;
         line-height: 100px;
@@ -2363,9 +2358,9 @@ h1 {
         width: 80%;
     }
 
-     .members-info__desc {
+    .members-info__desc {
         width: 60%;
-     }
+    }
 
     .deephouse-video__navitem,
     .rivertime-video__navitem {
@@ -2545,6 +2540,10 @@ h1 {
         width: 100%;
     }
 
+    .voice {
+        padding-bottom: 0;
+    }
+
     .video {
         width: 75%;
     }
@@ -2700,6 +2699,7 @@ h1 {
     .deephouse-video__slide,
     .deephouse-video__slider,
     .gallery__slide,
+    .gallery__slider,
     .rivertime-video__slide,
     .rivertime-video__slider {
         height: 300px;
@@ -2759,10 +2759,36 @@ h1 {
     .deephouse-wrapper {
         width: 100% !important;
     }
-
 }
 
 @media (max-width: 495px) {
+
+    .voice,
+    .gallery,
+    .order,
+    .contacts,
+    .members,
+    .deephouse-video,
+    .rivertime-video {
+        padding-top: 65px;
+    }
+
+    .gallery,
+    .contacts,
+    .deephouse-video,
+    .rivertime-video {
+        padding-bottom: 65px;
+    }
+
+    .deephouse-video-info__group,
+    .members-info__group {
+        margin-top: 65px;
+    }
+
+    .deephouse-video-info__desc,
+    .rivertime-video-info__desc {
+        margin-bottom: 65px;
+    }
 
     .modal {
         width: 100%;
@@ -2971,10 +2997,6 @@ h1 {
         height: 172px;
     }
 
-    .gallery-wrapper {
-        padding-bottom: 85px;
-    }
-
     .clients__title {
         margin-bottom: 50px;
     }
@@ -3006,13 +3028,12 @@ h1 {
         flex-wrap: wrap;
     }
 
-    .order-form__container_bottom {
-        margin-top: 37px;
+    .order-form__send-btn-container {
+        width: 100%;
     }
 
-    .order-form__send-btn-container {
-        margin-top: 60px;
-        width: 100%;
+    .voice {
+        padding-bottom: 30px;
     }
 
     .order-form__send-btn {
@@ -3025,10 +3046,6 @@ h1 {
 
     .order-form__error-msg {
         bottom: -19px;
-    }
-
-    .order {
-        padding-bottom: 89px;
     }
 
     .contacts__title {
