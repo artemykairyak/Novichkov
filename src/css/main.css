@@ -12,9 +12,8 @@ ul {
 
 html {
   font-size: 14px;
-  overflow-x: hidden;
   color: #fff !important;
-  background: #e7e5e8;
+  background: #191a1c;
 }
 
 body {
@@ -23,15 +22,22 @@ body {
   padding: 0;
   cursor: default;
   color: #fff;
-  background: #e7e5e8;
-  overflow-x: hidden;
+  background: #191a1c;
   position: relative;
+}
+
+main {
+  overflow: hidden;
 }
 
 section {
   width: 100%;
   position: relative;
   background: #191a1c;
+}
+
+section.main-section {
+  overflow: hidden;
 }
 
 section:not(.main-section) * {
@@ -310,6 +316,7 @@ h1 {
   position: relative;
   display: block;
   opacity: 1;
+  overflow: hidden;
 }
 
 .main-container_hidden {
@@ -322,7 +329,7 @@ h1 {
 }
 
 .main-container_rivertime {
-  background: url("img/rivertimebg.jpg") 0 0/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
+  background: url("img/rivertimebg.jpg") 0px -65px/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
 }
 
 .main-container_rivertime .main-section__title_rivertime {
@@ -1479,6 +1486,10 @@ h1 {
 .contacts {
   background: #191a1c;
   padding-top: 140px;
+  padding-bottom: calc(80vh + 140px);
+}
+
+.contacts_nopadding {
   padding-bottom: 140px;
 }
 
@@ -1542,31 +1553,34 @@ h1 {
 
 .rivertime-wrapper,
 .deephouse-wrapper {
-  width: 70%;
-}
-
-.rivertime-wrapper_clicked,
-.deephouse-wrapper_clicked {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  z-index: 1000;
-  transform-origin: bottom;
-}
-
-.rivertime-wrapper_clicked .rivertime__photo,
-.deephouse-wrapper_clicked .rivertime__photo {
-  bottom: 0;
+  position: static;
 }
 
 .rivertime__pic,
 .deephouse__pic {
   cursor: pointer;
+  height: 80vh;
+  position: absolute;
+  bottom: 0;
+  transform-origin: bottom;
+  padding: 0 15%;
+  transition: all .5s ease;
+}
+
+.rivertime__pic_clicked,
+.deephouse__pic_clicked {
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  padding: 0;
+  transition: all .5s ease;
+}
+
+.rivertime__pic_fixed,
+.deephouse__pic_fixed {
+  position: fixed;
 }
 
 .rivertime__pic:hover .rivertime__readmore-arrow,
@@ -1579,9 +1593,11 @@ h1 {
 .rivertime__photo,
 .deephouse__photo {
   width: 100%;
-  height: auto;
+  height: 100%;
   position: relative;
-  bottom: -3px;
+  /*bottom: -3px;*/
+  object-fit: cover;
+  transition: all .5s ease;
 }
 
 .rivertime__labels,
@@ -1591,6 +1607,12 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  opacity: 1;
+}
+
+.rivertime__labels_hidden,
+.deephouse__labels_hidden {
+  opacity: 0;
 }
 
 .rivertime__subtitle,
@@ -1937,6 +1959,10 @@ h1 {
     background: url("img/mainbg.png") 60% 100%/cover no-repeat;
   }
 
+  .main-container_rivertime {
+    background: url("img/rivertimebg.jpg") 0 0/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
+  }
+
   .voice__title {
     width: 200%;
   }
@@ -2069,6 +2095,18 @@ h1 {
   .deephouse-video__navitem,
   .rivertime-video__navitem {
     font-size: 14px;
+  }
+
+  .deephouse__pic,
+  .rivertime__pic {
+    height: auto;
+    position: static;
+    width: 100%;
+    padding: 0;
+  }
+
+  .contacts {
+    padding-bottom: 140px;
   }
 }
 
@@ -2906,6 +2944,10 @@ h1 {
 
   .main-section__title_rivertime {
     font-size: 54px;
+  }
+
+  .voice {
+    padding-bottom: 65px;
   }
 
   .voice__title {

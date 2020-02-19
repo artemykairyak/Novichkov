@@ -167,19 +167,23 @@ $(function() {
     });
 
     $('.rivertime__pic, .deephouse__pic').on('click', function() {
-        $('html, body').animate({ scrollTop: $(this).offset().top }, 500);
+        $('html, body').animate({ scrollTop: $(this).offset().top }, 300);
         removeScrollbar();
 
         if ($(this).hasClass('deephouse__pic')) {
             $('.main-container').removeClass('main-container_rivertime');
             $('.main-container').addClass('main-container_deephouse');
             if ($(window).width() > 1270) {
-                $('.deephouse-wrapper').addClass('deephouse-wrapper_clicked');
+                $('.deephouse__pic').addClass('deephouse__pic_clicked').delay(500).addClass('deephouse__pic_fixed');;
+                $('.deephouse__labels').addClass('deephouse__labels_hidden');
 
-                $('html, body').animate({ scrollTop: 0 }, 100, function() {
-                    $('.deephouse__pic').animate({ 'opacity': 0 }, 300, function() {
+                $('html, body').animate({ scrollTop: 0 }, 0, function() {
+                    $('.deephouse__pic').animate({ 'opacity': 1 }, 500, function() {
+                        $('.deephouse__pic').css({ 'opacity': 0 });
+                        $('.deephouse__pic').removeClass('deephouse__pic_fixed');
+                        $('.deephouse__pic').removeClass('deephouse__pic_clicked');
                         $('.deephouse__pic').css({ 'opacity': 1 });
-                        $('.deephouse-wrapper').removeClass('deephouse-wrapper_clicked');
+                        $('.deephouse__labels').removeClass('deephouse__labels_hidden');
                     });
                     setMenuClasses($('.main-section__menu-item_deephouse'));
                     setMobileMenuClasses($('.main-section__mobile-item_deephouse'));
@@ -202,18 +206,23 @@ $(function() {
             $('.main-container').removeClass('main-container_deephouse');
 
             if ($(window).width() > 1270) {
-                $('.rivertime-wrapper').addClass('rivertime-wrapper_clicked');
+                $('.rivertime__pic').addClass('rivertime__pic_clicked').delay(500).addClass('rivertime__pic_fixed');
+                $('.rivertime__labels').addClass('rivertime__labels_hidden');
 
-                $('html, body').animate({ scrollTop: 0 }, 100, function() {
-                    $('.rivertime__pic').animate({ 'opacity': 0 }, 300, function() {
+                $('html, body').animate({ scrollTop: 0 }, 0, function() {
+                    $('.rivertime__pic').animate({ 'opacity': 1 }, 500, function() {
+                        $('.rivertime__pic').css({ 'opacity': 0 });
+                        $('.rivertime__pic').removeClass('rivertime__pic_fixed');
+                        $('.rivertime__pic').removeClass('rivertime__pic_clicked');
                         $('.rivertime__pic').css({ 'opacity': 1 });
-                        $('.rivertime-wrapper').removeClass('rivertime-wrapper_clicked');
+                        $('.rivertime__labels').removeClass('rivertime__labels_hidden');
                     });
                     setMenuClasses($('.main-section__menu-item_cover'));
                     setMobileMenuClasses($('.main-section__mobile-item_cover'));
                     setSectionClasses($('.members, .rivertime-video, .deephouse'), $('.voice, .gallery, .rivertime, .deephouse-video'));
                     displayScrollbar();
                     loadRivertimeSection();
+
                 });
             } else {
                 $('html, body').animate({ scrollTop: 0 }, 100, function() {
@@ -288,6 +297,7 @@ $(function() {
         setSectionClasses($('.voice, .gallery, .rivertime'), $('.members, .rivertime-video, .deephouse, .deephouse-video'));
         !mobile ? setMenuClasses($('.main-section__menu-item_solo')) : setMobileMenuClasses($('.main-section__mobile-item_solo'));
         setTimeout(() => $('.gallery__slider').slick('refresh'), 100);
+        $('.contacts').removeClass('contacts_nopadding');
     }
 
     function loadRivertime(mobile) {
@@ -298,9 +308,9 @@ $(function() {
         !mobile ? setMenuClasses($('.main-section__menu-item_cover')) : setMobileMenuClasses($('.main-section__mobile-item_cover'));
         setSectionClasses($('.members, .rivertime-video, .deephouse'), $('.voice, .gallery, .rivertime, .deephouse-video'));
         loadRivertimeSection();
-         if (window.navigator.userAgent.indexOf('Edge') !== -1) {
+        if (window.navigator.userAgent.indexOf('Edge') !== -1) {
             setTimeout(() => $('.members__slider').slick('refresh'), 100);
-         }
+        }
     }
 
     function loadDeephouse(mobile) {
@@ -515,6 +525,7 @@ $(function() {
             $('.members-info__slider').slick('refresh');
             $('.rivertime-video__slider').slick('refresh');
         }, 100);
+        $('.contacts').removeClass('contacts_nopadding');
     }
 
     function loadDeephouseSection() {
@@ -524,13 +535,14 @@ $(function() {
         enableRev($('.deephouse-video__slider-arr'), 5, 7);
         enableRev($('.deephouse-video__nav'), 5, 6);
         setTimeout(() => $('.deephouse-video__slider').slick('refresh'), 100);
+        $('.contacts').addClass('contacts_nopadding');
     }
 
     function removeScrollbar() {
         let documentWidth = parseInt(document.documentElement.clientWidth);
         let windowsWidth = parseInt(window.innerWidth);
         let scrollbarWidth = windowsWidth - documentWidth;
-        $('body').css('margin-right', -scrollbarWidth);
+        //$('body').css('margin-right', -scrollbarWidth);
         $('html').addClass('disabled-scroll');
     }
 
