@@ -98,6 +98,19 @@ h1 {
     }
 }
 
+@keyframes slideuplogo {
+    from {
+        opacity: 0;
+        margin-top: 30px;
+
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
 @keyframes slideupmenuactive {
     0% {
         opacity: 0;
@@ -332,21 +345,6 @@ h1 {
         display: none;
     }
 
-    &_rivertime {
-        background: url(img/rivertimebg.jpg) 0px -65px/ cover no-repeat,
-            linear-gradient(180deg, #e7e5e8, #e7e5e8);
-
-        .main-section__title_rivertime {
-            display: block;
-            animation: slideuprivertime 1s ease forwards;
-            color: #fff;
-        }
-
-        &__videobg {
-            display: none;
-        }
-    }
-
     &_rivertime,
     &_deephouse {
         .main-section {
@@ -413,6 +411,56 @@ h1 {
         }
     }
 
+    &_rivertime {
+        background: url(img/rivertimebg.jpg) center/ cover no-repeat,
+            linear-gradient(180deg, #e7e5e8, #e7e5e8);
+
+        .main-section__title_rivertime {
+            display: block;
+            animation: slideuprivertime 1s ease forwards;
+            color: #fff;
+        }
+
+        &__videobg {
+            display: none;
+        }
+
+        .main-section {
+
+            &__readmore-btn,
+            &__order-btn {
+                color: #3d3d3d;
+            }
+
+            &__readmore-arrow,
+            &__order-arrow {
+                path {
+                    fill: #3d3d3d;
+                }
+            }
+
+            &__soc-icon {
+                path {
+                    fill: #3d3d3d;
+                }
+            }
+        }
+
+
+
+        .main-section__menu-item {
+            color: #3d3d3d;
+
+            &_active {
+                border-bottom: 2px solid #3d3d3d;
+            }
+
+            &:hover {
+                border-bottom-color: #3d3d3d;
+            }
+        }
+    }
+
     &:after {
         content: '';
         position: absolute;
@@ -431,11 +479,23 @@ h1 {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            width: 100vw;
+
+
+
         }
 
         &:after {
             display: block;
+        }
+
+        .main-section__menu-item-icon {
+            path {
+                fill: #fff;
+            }
         }
 
         .main-section {
@@ -465,12 +525,15 @@ h1 {
 
 .disable-animation {
     .main-section {
-
         &__menu-item {
 
             &:not(.main-section__menu-item_active) {
                 opacity: 0.66;
                 animation: none;
+            }
+
+            &_logo {
+                opacity: 1 !important;
             }
 
             &_active {
@@ -554,7 +617,9 @@ h1 {
             display: inline-block;
             position: absolute;
             top: 30px;
-            left: 24px;
+            right: 54px;
+            width: 25px;
+            height: 25px;
 
             span {
                 content: '';
@@ -564,6 +629,7 @@ h1 {
                 height: 1px;
                 left: 0;
                 display: inline-block;
+                top: 49%;
 
                 &:first-child {
                     transform: rotate(45deg);
@@ -628,20 +694,21 @@ h1 {
         position: absolute;
         top: 47px;
         display: none;
-
-
+        right: 0;
 
         &-icon {
             display: inline-block;
             height: 8px;
+            width: 22px;
             position: relative;
 
             span {
                 content: '';
+                width: 100%;
                 position: absolute;
                 height: 2px;
                 background: #262528;
-                width: 22px;
+
                 left: 0;
                 display: inline-block;
 
@@ -658,7 +725,7 @@ h1 {
         &-label {
             top: -2px;
             left: 30px;
-            padding-left: 30px;
+            padding-right: 11px;
             font-weight: 700;
             font-size: 10px;
             letter-spacing: 0.195em;
@@ -679,6 +746,8 @@ h1 {
         position: absolute;
         top: 47px;
         left: 0;
+        display: flex;
+        align-items: center;
 
         & * {
             transition: all .3s ease;
@@ -697,8 +766,24 @@ h1 {
             margin-right: 47px;
             font-size: 16px;
 
-            &:not(.main-section__menu-item_active) {
+
+
+            &-icon {
+                width: 167px;
+                height: 58px;
+            }
+
+            &_solo:not(.main-section__menu-item_active),
+            &_cover:not(.main-section__menu-item_active),
+            &_deephouse:not(.main-section__menu-item_active) {
                 animation: slideupmenu 1s ease 1.5s forwards;
+            }
+
+            &_logo {
+                padding-bottom: 0;
+                border: none;
+                margin-right: 100px;
+                animation: slideuplogo 1s ease 1.5s forwards;
             }
 
             &_active {
@@ -722,7 +807,7 @@ h1 {
     &__order-btn {
         position: absolute;
         right: 5.7%;
-        top: 47px;
+        top: 60px;
         text-transform: uppercase;
         font-weight: 600;
         font-size: 12px;
@@ -732,6 +817,9 @@ h1 {
         opacity: 0;
         animation: slideuporderbtn 1s ease 2s forwards;
         transition: all .3s ease;
+        height: 37px;
+        display: flex;
+        align-items: center;
 
         &:hover {
             right: 5%;
@@ -744,7 +832,6 @@ h1 {
 
     &__order-arrow {
         position: absolute;
-        top: 25%;
         right: -40px;
         animation: slideuporderarrow 1s ease 1.5s forwards;
         width: 41px;
@@ -937,11 +1024,15 @@ h1 {
         display: -ms-flex;
         display: -o-flex;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
     }
 
     &__info {
         width: 50%;
+
+        .video:last-child {
+            margin-top: 150px;
+        }
     }
 
     &__subcol {
@@ -1005,6 +1096,8 @@ h1 {
     &-wrapper {
         transform: translateY(105%);
 
+
+
         &_visible {
             animation: video 1.3s ease-in-out forwards;
         }
@@ -1059,7 +1152,7 @@ h1 {
     }
 
     &_pos {
-        margin-bottom: -20%;
+        transform: translateY(200px)
     }
 }
 
@@ -1067,9 +1160,7 @@ h1 {
     display: none;
 }
 
-.gallery {
-    padding-top: 140px;
-}
+
 
 .gallery,
 .rivertime-video,
@@ -1077,6 +1168,10 @@ h1 {
     background: rgb(25, 26, 28);
     padding-top: 140px;
     padding-bottom: 140px;
+
+    &__mobile-slider {
+        display: none;
+    }
 
     &__slider {
         width: 100%;
@@ -1146,7 +1241,14 @@ h1 {
     }
 }
 
+.deephouse-video {
+    &__title {
+        display: none;
+    }
+}
+
 .gallery {
+    padding-top: 0;
 
     &__slider-arr {
         transform: translateY(-25%) !important;
@@ -1580,7 +1682,7 @@ h1 {
         transition: all .5s ease;
 
         &_clicked {
-             width: 100%;
+            width: 100%;
             height: 100vh;
             left: 0;
             right: 0;
@@ -1934,7 +2036,7 @@ h1 {
 @media (min-width: 2000px) {
     .main-section__title-wrapper {
         background: url(img/mainbg.png) 60% 100%/cover no-repeat;
-    }   
+    }
 
     .main-section__title-container {
         left: 15%;
@@ -1946,8 +2048,8 @@ h1 {
         background: url(img/mainbg.png) 60% 100%/cover no-repeat;
     }
 
-     .main-container_rivertime {
-        background: url(img/rivertimebg.jpg) 0 0/cover no-repeat,linear-gradient(180deg,#e7e5e8,#e7e5e8);
+    .main-container_rivertime {
+        background: url(img/rivertimebg.jpg) center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
     }
 
     .voice {
@@ -1971,7 +2073,6 @@ h1 {
 
 
 @media (max-width: 1300px) {
-
     .main-container_rivertime {
         background: url(../img/rivertimebg.jpg) center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
     }
@@ -2081,17 +2182,13 @@ h1 {
         padding-bottom: 0;
     }
 
-    .main-container_deephouse .main-container__videobg {
-        height: 100vh;
-        width: auto;
-    }
-
     .deephouse-video__navitem,
     .rivertime-video__navitem {
         font-size: 14px;
     }
 
-    .deephouse__pic, .rivertime__pic {
+    .deephouse__pic,
+    .rivertime__pic {
         height: auto;
         position: static;
         width: 100%;
@@ -2105,7 +2202,11 @@ h1 {
 
 @media (max-width: 1192px) {
     .main-section {
-        height: 80vh;
+        height: 50vh;
+    }
+
+    .main-container_rivertime {
+        background: url(../../img/rivertime-mobilebg.jpg) center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
     }
 
     .main-section__title-wrapper {
@@ -2166,6 +2267,41 @@ h1 {
         font-size: 90px;
     }
 
+}
+
+
+
+@media (max-width: 1024px) and (min-height: 1360px) {
+    .main-section {
+        height: 50vh;
+    }
+
+    .main-container_rivertime {
+        background: url(../../../img/rivertime-mobilebg.jpg) center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
+    }
+
+}
+
+@media (max-width: 1025px) and (max-height: 1360px) {
+    .main-section {
+        height: 70vh;
+    }
+}
+
+@media (max-width: 1015px) {
+    .main-section__menu-item_logo {
+        margin-right: 40px;
+    }
+
+    .main-section__menu-item-icon {
+        width: 92px;
+        height: 32px;
+    }
+
+    .main-section__order-btn {
+        height: 37px;
+        top: 47px;
+    }
 }
 
 @media (max-width: 950px) {
@@ -2345,12 +2481,28 @@ h1 {
     .clients__title {
         margin-bottom: 80px;
     }
+
 }
 
 @media (max-width: 860px) {
+    body {
+        background: red;
+    }
+
     .modal {
         width: 60%;
-        padding: 6% 7% 3%
+        padding: 6% 7% 3%;
+    }
+
+    .main-section__mobile-menu {
+        display: block;
+    }
+
+    .main-section__menu-item:not(.main-section__menu-item_logo),
+    .main-section__order-btn,
+    .main-section__readmore-btn,
+    .main-section__soc {
+        display: none;
     }
 
     .preloader__icon {
@@ -2366,10 +2518,6 @@ h1 {
         background: url(../img/mainbg.png) 65% 100%/cover no-repeat;
     }
 
-    .main-container_deephouse .main-container__videobg {
-        left: -50%;
-    }
-
     .main-section__title-container {
         left: 0;
     }
@@ -2382,13 +2530,44 @@ h1 {
         height: 55vh;
     }
 
+    .rivertime-video__mobile-slider,
+    .deephouse-video__mobile-slider {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+
+    }
+
+    .rivertime-video__slider,
+    .rivertime-video__slider-arr,
+    .rivertime-video__nav,
+    .deephouse-video__slider,
+    .deephouse-video__slider-arr,
+    .deephouse-video__nav {
+        display: none;
+    }
+
+    .deephouse-video__title {
+        display: block;
+    }
+
+    .rivertime-video__mobile-slide,
+    .deephouse-video__mobile-slide {
+        width: 60%;
+
+        &:nth-child(2n) {
+            align-self: flex-end;
+            margin: 40px 0 50px;
+        }
+    }
+
     .main-section__title_rivertime {
         font-size: 86px;
         line-height: 100px;
     }
 
     .main-section__title-wrapper {
-        height: 90%;
+        height: 100%;
     }
 
     .members .deephouse-video-info__desc {
@@ -2439,7 +2618,13 @@ h1 {
     .rivertime-video__slider {
         height: 350px;
     }
+
+    .voice__info .video:not(:first-of-type) {
+
+        margin-top: 70px;
+    }
 }
+
 
 @media (max-width: 670px) {
 
@@ -2487,6 +2672,10 @@ h1 {
 
     .disable-animation .main-section__soc {
         bottom: 7%;
+    }
+
+    .contacts__table-soc {
+        display: block;
     }
 
     .main-section__title-container {
@@ -2573,21 +2762,74 @@ h1 {
         width: 100%;
     }
 
+    .voice__info {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        flex-direction: column;
+
+        .voice__title {
+            order: 1;
+        }
+
+        .voice__genres {
+            order: 2;
+        }
+
+        .voice__desc {
+            order: 3;
+        }
+
+        .voice__video-title {
+            order: 4;
+        }
+
+        .video:not(:first-of-type) {
+            order: 5;
+            margin-top: 0 !important;
+        }
+
+        .video:not(:last-child) {
+            order: 6;
+            margin-top: 50px;
+            align-self: flex-end;
+        }
+    }
+
+    .voice__subcol {
+        display: flex;
+        flex-direction: column;
+    }
+
     .voice__desc {
         width: 100%;
+    }
+
+    .video_pos {
+        transform: none;
+
     }
 
     .voice {
         padding-bottom: 0;
     }
 
+    .voice__info .video:not(:first-of-type) {
+        margin-top: 50px;
+    }
+
     .video {
         width: 75%;
     }
 
+    .voice-wrapper {
+        padding-bottom: 50px;
+    }
+
     .video_pos {
         margin-bottom: 0;
-
     }
 
     .voice__subcol {
@@ -2603,25 +2845,6 @@ h1 {
     .video__label {
         width: 70%;
         font-size: 14px;
-    }
-
-    .main-section__mobile-menu {
-        display: block;
-    }
-
-    .main-section__menu,
-    .main-section__order-btn,
-    .main-section__readmore-btn,
-    .main-section__soc {
-        display: none;
-    }
-
-    .main-section {
-        height: 80vh;
-    }
-
-    .contacts__table-soc {
-        display: block;
     }
 
     .modal {
@@ -2679,6 +2902,14 @@ h1 {
         padding: 0 5%;
     }
 
+    .main-section__menu {
+        margin-left: 5%;
+    }
+
+    .main-section__mobile-menu {
+        right: 50px;
+    }
+
     .main-section__title-container {
         left: 5%;
     }
@@ -2701,6 +2932,10 @@ h1 {
 
     .members__slider-nav {
         display: none;
+    }
+
+    .main-section__title-wrapper {
+        height: 90%;
     }
 
     .members-info__genres,
@@ -2774,10 +3009,6 @@ h1 {
 
     }
 
-    .main-container_deephouse .main-container__videobg {
-        left: -90%;
-    }
-
     .rivertime__mobile-labels,
     .deephouse__mobile-labels {
         display: -webkit-flex;
@@ -2827,6 +3058,10 @@ h1 {
         margin-bottom: 65px;
     }
 
+    .main-section__title-wrapper {
+        height: 85%;
+    }
+
     .modal {
         width: 100%;
     }
@@ -2841,7 +3076,7 @@ h1 {
     }
 
     .main-section {
-        height: 550px;
+        height: 45vh;
     }
 
     .video__label {
@@ -2937,6 +3172,19 @@ h1 {
         margin-bottom: 15px;
     }
 
+    .main-section__menu {
+        top: 15px;
+    }
+
+    .main-section__mobile-menu {
+        top: 20px;
+        right: 25px;
+    }
+
+    .main-container_rivertime {
+        background: url(../../../img/rivertime-mobilebg.jpg) center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
+    }
+
     .main-section__role {
         margin-right: 15px;
         font-size: 12px;
@@ -2960,7 +3208,7 @@ h1 {
 
     .deephouse__pic,
     .rivertime__pic {
-        height: 334px;
+        height: 230px;
     }
 
     .deephouse__photo,
@@ -2992,11 +3240,11 @@ h1 {
     }
 
     .main-section__title-container {
-        top: 50%;
+        top: 38%;
     }
 
     .main-section {
-        height: 490px;
+        height: 40vh;
     }
 
     .voice__title {
@@ -3137,10 +3385,6 @@ h1 {
         font-size: 36px;
     }
 
-    .main-container_deephouse .main-container__videobg {
-        left: -170%;
-    }
-
     .main-section__title_deephouse {
         font-size: 32px;
     }
@@ -3153,7 +3397,7 @@ h1 {
 
 @media (max-width: 320px) {
     .main-section {
-        height: 470px;
+        height: 51vh;
     }
 
     .main-section__role {
