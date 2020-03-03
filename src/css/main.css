@@ -415,6 +415,11 @@ h1 {
   transform: translateX(-50%);
 }
 
+.main-container .main-section__menu-item_rivertimelogo,
+.main-container .main-section__menu-item_deephouselogo {
+  display: none;
+}
+
 .main-container_rivertime {
   background: url("img/rivertimebg.jpg") center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
 }
@@ -427,6 +432,15 @@ h1 {
 
 .main-container_rivertime__videobg {
   display: none;
+}
+
+.main-container_rivertime .main-section__menu-item_solologo,
+.main-container_rivertime .main-section__menu-item_deephouselogo {
+  display: none;
+}
+
+.main-container_rivertime .main-section__menu-item_rivertimelogo {
+  display: block;
 }
 
 .main-container_rivertime .main-section__readmore-btn,
@@ -479,6 +493,15 @@ h1 {
 }
 
 .main-container_deephouse:after {
+  display: block;
+}
+
+.main-container_deephouse .main-section__menu-item_solologo,
+.main-container_deephouse .main-section__menu-item_rivertimelogo {
+  display: none;
+}
+
+.main-container_deephouse .main-section__menu-item_deephouselogo {
   display: block;
 }
 
@@ -2466,10 +2489,6 @@ h1 {
 }
 
 @media (max-width: 860px) {
-  body {
-    background: red;
-  }
-
   .modal {
     width: 60%;
     padding: 6% 7% 3%;
@@ -2918,7 +2937,7 @@ h1 {
   .members-info__genres,
   .members-info__desc,
   .members-info__group {
-    margin-left: 5%;
+    margin-left: 6%;
   }
 
   .members-info__desc {
@@ -3002,6 +3021,20 @@ h1 {
   .rivertime-wrapper,
   .deephouse-wrapper {
     width: 100% !important;
+  }
+
+  .deephouse-video:after,
+  .voice:after {
+    display: none;
+  }
+
+  .revealator-slideup {
+    transform: none !important;
+  }
+
+  .voice__title,
+  .members-info__genres-title {
+    opacity: 1 !important;
   }
 }
 
@@ -3217,8 +3250,16 @@ h1 {
     top: 38%;
   }
 
+  .main-container_rivertime .main-section__title-container {
+    bottom: 10%;
+  }
+
   .main-section {
-    height: 40vh;
+    height: 300px;
+  }
+
+  .main-container[class$="main-container"] .main-section {
+    height: 70vh;
   }
 
   .voice__title {
@@ -3324,14 +3365,8 @@ h1 {
   }
 
   .members-info__desc,
-  .members-info__genres,
-  .members-info__group {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-
-  .members-info__desc {
-    width: 100%;
+  .deephouse-video-info {
+    width: 85%;
   }
 
   .members-info__name {

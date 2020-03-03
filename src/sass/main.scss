@@ -411,6 +411,10 @@ h1 {
         }
     }
 
+    .main-section__menu-item_rivertimelogo, .main-section__menu-item_deephouselogo {
+        display: none;
+    }
+
     &_rivertime {
         background: url(img/rivertimebg.jpg) center/ cover no-repeat,
             linear-gradient(180deg, #e7e5e8, #e7e5e8);
@@ -424,6 +428,14 @@ h1 {
         &__videobg {
             display: none;
         }
+
+        .main-section__menu-item_solologo, .main-section__menu-item_deephouselogo {
+        display: none;
+    }
+
+    .main-section__menu-item_rivertimelogo {
+        display: block;
+    }
 
         .main-section {
 
@@ -483,14 +495,19 @@ h1 {
             object-fit: cover;
             object-position: center;
             width: 100vw;
-
-
-
         }
 
         &:after {
             display: block;
         }
+
+         .main-section__menu-item_solologo, .main-section__menu-item_rivertimelogo {
+        display: none;
+    }
+
+    .main-section__menu-item_deephouselogo {
+        display: block;
+    }
 
         .main-section__menu-item-icon {
             path {
@@ -2485,10 +2502,6 @@ h1 {
 }
 
 @media (max-width: 860px) {
-    body {
-        background: red;
-    }
-
     .modal {
         width: 60%;
         padding: 6% 7% 3%;
@@ -2941,7 +2954,7 @@ h1 {
     .members-info__genres,
     .members-info__desc,
     .members-info__group {
-        margin-left: 5%;
+        margin-left: 6%;
     }
 
     .members-info__desc {
@@ -3027,6 +3040,19 @@ h1 {
     .deephouse-wrapper {
         width: 100% !important;
     }
+
+    .deephouse-video:after, .voice:after {
+        display: none;
+    }
+
+    .revealator-slideup {
+  transform: none !important;
+
+}
+
+.voice__title, .members-info__genres-title {
+    opacity: 1 !important;
+}
 }
 
 @media (max-width: 495px) {
@@ -3243,8 +3269,16 @@ h1 {
         top: 38%;
     }
 
+    .main-container_rivertime .main-section__title-container {
+        bottom: 10%;
+    }
+
     .main-section {
-        height: 40vh;
+        height: 300px;
+    }
+
+    .main-container[class$="main-container"] .main-section  {
+        height: 70vh;
     }
 
     .voice__title {
@@ -3349,15 +3383,8 @@ h1 {
         margin-top: 35px;
     }
 
-    .members-info__desc,
-    .members-info__genres,
-    .members-info__group {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .members-info__desc {
-        width: 100%;
+    .members-info__desc, .deephouse-video-info {
+        width: 85%;
     }
 
     .members-info__name {
