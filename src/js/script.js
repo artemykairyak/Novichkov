@@ -1,7 +1,6 @@
 $(function() {
 
-    //$('.main-container__videobg').find('source[type="video/webm"]').attr('src', 'img/deephouse.webm');
-   // $('.main-container__videobg').find('source[type="video/mp4"]').attr('src', 'img/deephouse.mp4');
+   $('.main-container').prepend('<video class="main-container__videobg" muted loop autoplay playsinline preload="metadata" poster="img/deephouse.jpg"><source src="img/deephouse.webm" type="video/webm"><source src="img/deephouse.mp4" type="video/mp4"></video>');
 
     if (window.navigator.userAgent.indexOf('Edge') !== -1) {
         setTimeout(() => initSliders(), 300);
@@ -104,31 +103,36 @@ $(function() {
         }
     });
 
-    $(window).on('scroll', function() {
-        if (($(window).scrollTop() + $(window).height()) >= $('.video-wrapper:first').offset().top) {
-            setTimeout(() => $('.video-wrapper:first').delay(1000).addClass('video-wrapper_visible'), 0);
-        }
+    if ($(window).width() > 860) {
+        $(window).on('scroll', function() {
+            if (($(window).scrollTop() + $(window).height()) >= $('.video-wrapper:first').offset().top) {
+                setTimeout(() => $('.video-wrapper:first').delay(1000).addClass('video-wrapper_visible'), 0);
+            }
 
-        if (($(window).scrollTop() + $(window).height()) >= $('.video-wrapper:eq(1)').offset().top) {
-            setTimeout(() => $('.video-wrapper:eq(1)').delay(1300).addClass('video-wrapper_visible'), 0);
-        }
+            if (($(window).scrollTop() + $(window).height()) >= $('.video-wrapper:eq(1)').offset().top) {
+                setTimeout(() => $('.video-wrapper:eq(1)').delay(1300).addClass('video-wrapper_visible'), 0);
+            }
 
-        if (($(window).scrollTop() + $(window).height()) >= $('.video-wrapper:last').offset().top) {
-            setTimeout(() => $('.video-wrapper:last').delay(1600).addClass('video-wrapper_visible'), 0);
-        }
+            if (($(window).scrollTop() + $(window).height()) >= $('.video-wrapper:last').offset().top) {
+                setTimeout(() => $('.video-wrapper:last').delay(1600).addClass('video-wrapper_visible'), 0);
+            }
 
-        if (($(window).scrollTop() + $(window).height()) >= $('.mobile-video-wrapper:eq(0)').offset().top) {
-            setTimeout(() => $('.mobile-video-wrapper:eq(0)').delay(1000).addClass('video-wrapper_visible'), 0);
-        }
+            if (($(window).scrollTop() + $(window).height()) >= $('.mobile-video-wrapper:eq(0)').offset().top) {
+                setTimeout(() => $('.mobile-video-wrapper:eq(0)').delay(1000).addClass('video-wrapper_visible'), 0);
+            }
 
-        if (($(window).scrollTop() + $(window).height()) >= $('.mobile-video-wrapper:eq(1)').offset().top) {
-            setTimeout(() => $('.mobile-video-wrapper:eq(1)').delay(1300).addClass('video-wrapper_visible'), 0);
-        }
+            if (($(window).scrollTop() + $(window).height()) >= $('.mobile-video-wrapper:eq(1)').offset().top) {
+                setTimeout(() => $('.mobile-video-wrapper:eq(1)').delay(1300).addClass('video-wrapper_visible'), 0);
+            }
 
-        if (($(window).scrollTop() + $(window).height()) >= $('.mobile-video-wrapper:eq(2)').offset().top) {
-            setTimeout(() => $('.mobile-video-wrapper:eq(2)').delay(1600).addClass('video-wrapper_visible'), 0);
-        }
-    });
+            if (($(window).scrollTop() + $(window).height()) >= $('.mobile-video-wrapper:eq(2)').offset().top) {
+                setTimeout(() => $('.mobile-video-wrapper:eq(2)').delay(1600).addClass('video-wrapper_visible'), 0);
+            }
+        });
+    } else {
+        $('.video-wrapper').addClass('video-wrapper_visible');
+    }
+
 
     Revealator.effects_padding = -700;
     Revealator.scroll_padding = -500;
@@ -167,6 +171,7 @@ $(function() {
 
     $('.order-form__input').on('focus', function() {
         $(this).parent().addClass('order-form__input-container_focused');
+        $(this).parent().removeClass('order-form__input-container_error')
     });
 
     $('.order-form__input').on('blur', function() {
@@ -554,7 +559,7 @@ $(function() {
     }
 
     function loadDeephouseSection() {
-        window.location.hash = '#deephousesax';
+        window.location.hash = '#deephousesax';        
         enableRev($('.deephouse-video-info__genres, .deephouse-video-info__desc'), 5, 9);
         enableRev($('.deephouse-video__slider'), 5, 6);
         enableRev($('.deephouse-video__slider-arr'), 5, 7);

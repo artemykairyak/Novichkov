@@ -1084,7 +1084,6 @@ h1 {
 .video {
   width: 92%;
   position: relative;
-  /*overflow: hidden;*/
 }
 
 .video-wrapper {
@@ -2514,6 +2513,22 @@ h1 {
     height: auto !important;
   }
 
+  .video-wrapper_visible {
+    animation: none;
+    transform: translateY(0%);
+    opacity: 1;
+    transition: none !important;
+  }
+
+  .revealator-slideup {
+    transform: none !important;
+  }
+
+  .voice__title,
+  .members-info__genres-title {
+    opacity: 1 !important;
+  }
+
   .main-section__title-wrapper {
     background: url("../img/mainbg.png") 65% 100%/cover no-repeat;
   }
@@ -3026,15 +3041,6 @@ h1 {
   .deephouse-video:after,
   .voice:after {
     display: none;
-  }
-
-  .revealator-slideup {
-    transform: none !important;
-  }
-
-  .voice__title,
-  .members-info__genres-title {
-    opacity: 1 !important;
   }
 }
 

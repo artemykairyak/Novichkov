@@ -411,7 +411,8 @@ h1 {
         }
     }
 
-    .main-section__menu-item_rivertimelogo, .main-section__menu-item_deephouselogo {
+    .main-section__menu-item_rivertimelogo,
+    .main-section__menu-item_deephouselogo {
         display: none;
     }
 
@@ -429,13 +430,14 @@ h1 {
             display: none;
         }
 
-        .main-section__menu-item_solologo, .main-section__menu-item_deephouselogo {
-        display: none;
-    }
+        .main-section__menu-item_solologo,
+        .main-section__menu-item_deephouselogo {
+            display: none;
+        }
 
-    .main-section__menu-item_rivertimelogo {
-        display: block;
-    }
+        .main-section__menu-item_rivertimelogo {
+            display: block;
+        }
 
         .main-section {
 
@@ -501,13 +503,14 @@ h1 {
             display: block;
         }
 
-         .main-section__menu-item_solologo, .main-section__menu-item_rivertimelogo {
-        display: none;
-    }
+        .main-section__menu-item_solologo,
+        .main-section__menu-item_rivertimelogo {
+            display: none;
+        }
 
-    .main-section__menu-item_deephouselogo {
-        display: block;
-    }
+        .main-section__menu-item_deephouselogo {
+            display: block;
+        }
 
         .main-section__menu-item-icon {
             path {
@@ -1108,12 +1111,9 @@ h1 {
 .video {
     width: 92%;
     position: relative;
-    /*overflow: hidden;*/
 
     &-wrapper {
         transform: translateY(105%);
-
-
 
         &_visible {
             animation: video 1.3s ease-in-out forwards;
@@ -2527,6 +2527,22 @@ h1 {
         }
     }
 
+    .video-wrapper_visible {
+        animation: none;
+        transform: translateY(0%);
+        opacity: 1;
+        transition: none !important;
+    }
+
+    .revealator-slideup {
+        transform: none !important;
+    }
+
+    .voice__title,
+    .members-info__genres-title {
+        opacity: 1 !important;
+    }
+
     .main-section__title-wrapper {
         background: url(../img/mainbg.png) 65% 100%/cover no-repeat;
     }
@@ -2633,7 +2649,6 @@ h1 {
     }
 
     .voice__info .video:not(:first-of-type) {
-
         margin-top: 70px;
     }
 }
@@ -3041,18 +3056,10 @@ h1 {
         width: 100% !important;
     }
 
-    .deephouse-video:after, .voice:after {
+    .deephouse-video:after,
+    .voice:after {
         display: none;
     }
-
-    .revealator-slideup {
-  transform: none !important;
-
-}
-
-.voice__title, .members-info__genres-title {
-    opacity: 1 !important;
-}
 }
 
 @media (max-width: 495px) {
@@ -3277,7 +3284,7 @@ h1 {
         height: 300px;
     }
 
-    .main-container[class$="main-container"] .main-section  {
+    .main-container[class$="main-container"] .main-section {
         height: 70vh;
     }
 
@@ -3383,7 +3390,8 @@ h1 {
         margin-top: 35px;
     }
 
-    .members-info__desc, .deephouse-video-info {
+    .members-info__desc,
+    .deephouse-video-info {
         width: 85%;
     }
 
