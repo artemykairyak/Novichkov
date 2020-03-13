@@ -65,7 +65,7 @@ $(function() {
         if (validateForm($(this))) {
             let data = $(this).serializeArray()
             $.ajax({
-                url: 'http://novichkov.asap-lp.ru/mail/index.php',
+                url: 'http://novich.moscow/mail/index.php',
                 type: "POST",
                 data: data,
                 success: function(data) {

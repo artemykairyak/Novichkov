@@ -1697,6 +1697,8 @@ h1 {
         transform-origin: bottom;
         padding: 0 15%;
         transition: all .5s ease;
+        left: 0;
+        right: 0;
 
         &_clicked {
             width: 100%;
