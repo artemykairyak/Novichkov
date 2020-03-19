@@ -55,6 +55,12 @@ button {
     -webkit-border-radius: 0;
 }
 
+button {
+    background: transparent;
+    border: none;
+    position: relative;
+}
+
 h1 {
     display: none;
 }
