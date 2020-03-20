@@ -1097,34 +1097,9 @@ h1 {
     }
 }
 
-@keyframes video {
-    0% {
-        transform: translateY(105%);
-        opacity: 0;
-    }
-
-    70% {
-        transform: translateY(-10%);
-        opacity: 0.8;
-    }
-
-    100% {
-        transform: translateY(0%);
-        opacity: 1;
-    }
-}
-
 .video {
     width: 92%;
     position: relative;
-
-    &-wrapper {
-        transform: translateY(105%);
-
-        &_visible {
-            animation: video 1.3s ease-in-out forwards;
-        }
-    }
 
     &-container {
         position: relative;
@@ -1175,15 +1150,13 @@ h1 {
     }
 
     &_pos {
-        transform: translateY(200px)
+        margin-top: 80%;
     }
 }
 
 .hidden {
     display: none;
 }
-
-
 
 .gallery,
 .rivertime-video,
@@ -2096,6 +2069,13 @@ h1 {
     }
 }
 
+@media (max-width: 1400px) {
+    .contacts__email,
+    .contacts__phone {
+        font-size: 32px;
+    }
+    }
+
 
 @media (max-width: 1300px) {
     .main-container_rivertime {
@@ -2294,7 +2274,12 @@ h1 {
 
 }
 
-
+@media (max-width: 1060px) {
+    .contacts__email,
+    .contacts__phone {
+        font-size: 26px;
+    }
+    }
 
 @media (max-width: 1024px) and (min-height: 1360px) {
     .main-section {
@@ -2326,6 +2311,10 @@ h1 {
     .main-section__order-btn {
         height: 37px;
         top: 47px;
+    }
+
+    .video_pos {
+        margin-top: 120%;
     }
 }
 
@@ -2661,6 +2650,23 @@ h1 {
     }
 }
 
+@media (max-width: 765px) {
+    .contacts__table {
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .contacts__title {
+        margin-bottom: 20px;
+    }
+
+    .contacts__table-soc {
+        display: block;
+    }
+    }
 
 @media (max-width: 670px) {
 
@@ -2915,6 +2921,10 @@ h1 {
         line-height: 15px;
         color: #fff;
         order: 3;
+    }
+
+    .video_pos {
+        margin-top: 0;
     }
 }
 

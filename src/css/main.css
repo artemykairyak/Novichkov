@@ -926,7 +926,7 @@ h1 {
   width: 100%;
   height: 100%;
   max-width: 1600px;
-  background: url("../../img/mainbg.png") 20% 100%/contain no-repeat;
+  background: url("../../../../img/mainbg.png") 20% 100%/contain no-repeat;
 }
 
 .main-section__title-container {
@@ -1070,34 +1070,9 @@ h1 {
   margin-bottom: 70px;
 }
 
-@keyframes video {
-  0% {
-    transform: translateY(105%);
-    opacity: 0;
-  }
-
-  70% {
-    transform: translateY(-10%);
-    opacity: 0.8;
-  }
-
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
 .video {
   width: 92%;
   position: relative;
-}
-
-.video-wrapper {
-  transform: translateY(105%);
-}
-
-.video-wrapper_visible {
-  animation: video 1.3s ease-in-out forwards;
 }
 
 .video-container {
@@ -1147,7 +1122,7 @@ h1 {
 }
 
 .video_pos {
-  transform: translateY(200px);
+  margin-top: 80%;
 }
 
 .hidden {
@@ -2096,6 +2071,13 @@ h1 {
   }
 }
 
+@media (max-width: 1400px) {
+  .contacts__email,
+  .contacts__phone {
+    font-size: 32px;
+  }
+}
+
 @media (max-width: 1300px) {
   .main-container_rivertime {
     background: url("../img/rivertimebg.jpg") center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
@@ -2289,6 +2271,13 @@ h1 {
   }
 }
 
+@media (max-width: 1060px) {
+  .contacts__email,
+  .contacts__phone {
+    font-size: 26px;
+  }
+}
+
 @media (max-width: 1025px) and (max-height: 1360px) {
   .main-section {
     height: 70vh;
@@ -2301,7 +2290,7 @@ h1 {
   }
 
   .main-container_rivertime {
-    background: url("../../img/rivertime-mobilebg.jpg") center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
+    background: url("../../../img/rivertime-mobilebg.jpg") center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
   }
 }
 
@@ -2318,6 +2307,10 @@ h1 {
   .main-section__order-btn {
     height: 37px;
     top: 47px;
+  }
+
+  .video_pos {
+    margin-top: 120%;
   }
 }
 
@@ -2647,6 +2640,24 @@ h1 {
   }
 }
 
+@media (max-width: 765px) {
+  .contacts__table {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .contacts__title {
+    margin-bottom: 20px;
+  }
+
+  .contacts__table-soc {
+    display: block;
+  }
+}
+
 @media (max-width: 670px) {
 @keyframes slideupreadmorebtn {
     0% {
@@ -2898,6 +2909,10 @@ h1 {
     line-height: 15px;
     color: #fff;
     order: 3;
+  }
+
+  .video_pos {
+    margin-top: 0;
   }
 }
 
@@ -3203,7 +3218,7 @@ h1 {
   }
 
   .main-container_rivertime {
-    background: url("../../img/rivertime-mobilebg.jpg") center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
+    background: url("../../../img/rivertime-mobilebg.jpg") center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
   }
 
   .main-section__role {
