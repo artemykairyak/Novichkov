@@ -2035,6 +2035,10 @@ h1 {
   width: 74%;
 }
 
+.order__sale {
+  visibility: hidden;
+}
+
 @media (min-width: 2000px) {
   .main-section__title-wrapper {
     background: url("img/mainbg.png") 60% 100%/cover no-repeat;
@@ -2075,6 +2079,10 @@ h1 {
   .contacts__email,
   .contacts__phone {
     font-size: 32px;
+  }
+
+  .main-section__title_rivertime {
+    font-size: 130px;
   }
 }
 
@@ -2149,10 +2157,6 @@ h1 {
   .main-section__order-btn,
   .main-section__readmore-btn {
     font-size: 11px;
-  }
-
-  .main-section__title_rivertime {
-    font-size: 130px;
   }
 
   .main-section__soc-icon,
