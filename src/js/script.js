@@ -137,20 +137,6 @@ $(function() {
     Revealator.effects_padding = -700;
     Revealator.scroll_padding = -500;
 
-    function toggleLinks(section) {
-        if (section === 'solo' || section === 'deephousesax') {
-            $('.main-section__soc-link_inst').attr('href', 'https://www.instagram.com/alex_novich_');
-            $('.main-section__soc-link_vk').attr('href', 'https://vk.com/id18426389');
-            $('.contacts__table-soc-link_inst').attr('href', 'https://www.instagram.com/alex_novich_');
-            $('.contacts__table-soc-link_vk').attr('href', 'https://vk.com/id18426389');
-        } else if (section === 'rivertime') {
-            $('.main-section__soc-link_inst').attr('href', 'https://www.instagram.com/rivertimeshow/');
-            $('.main-section__soc-link_vk').attr('href', 'https://vk.com/rivertimemusic');
-            $('.contacts__table-soc-link_inst').attr('href', 'https://www.instagram.com/rivertimeshow/');
-            $('.contacts__table-soc-link_vk').attr('href', 'https://vk.com/rivertimemusic');
-        }
-    }
-
     if (window.location.hash === '#rivertime') {
         $('.main-container').addClass('main-container_rivertime')
         $('.main-section').addClass('disable-animation');
@@ -173,6 +159,7 @@ $(function() {
 
     if (window.location.hash === '#' || window.location.hash === '') {
         toggleLinks('solo');
+        stopVideo();
     }
 
     $('.main-section__order-btn, .main-section__mobile-orderbtn').on('click', function(e) {
@@ -235,7 +222,7 @@ $(function() {
                     setSectionClasses($('.deephouse-video'), $('.voice, .gallery, .rivertime, .members, .rivertime-video, .deephouse'));
                     displayScrollbar();
                     loadDeephouseSection();
-                    
+
                 });
             } else {
                 $('html, body').animate({ scrollTop: 0 }, 100, function() {
@@ -246,7 +233,7 @@ $(function() {
                     loadDeephouseSection();
                 });
             }
-toggleLinks('deephousesax');
+            toggleLinks('deephousesax');
         } else {
             $('.main-container').addClass('main-container_rivertime');
             $('.main-container').removeClass('main-container_deephouse');
@@ -268,7 +255,7 @@ toggleLinks('deephousesax');
                     setSectionClasses($('.members, .rivertime-video, .deephouse'), $('.voice, .gallery, .rivertime, .deephouse-video'));
                     displayScrollbar();
                     loadRivertimeSection();
-                    
+
                 });
             } else {
                 $('html, body').animate({ scrollTop: 0 }, 100, function() {
@@ -304,18 +291,21 @@ toggleLinks('deephousesax');
     });
 
     $('.main-section__menu-item_solo').on('click', function() {
+        stopVideo();
         loadSolo();
-         toggleLinks('solo');
+        toggleLinks('solo');
     });
 
     $('.main-section__menu-item_cover').on('click', function() {
+        stopVideo();
         loadRivertime();
-         toggleLinks('rivertime');
+        toggleLinks('rivertime');
     });
 
     $('.main-section__menu-item_deephouse').on('click', function() {
+        stopVideo();
         loadDeephouse();
-         toggleLinks('deephousesax');
+        toggleLinks('deephousesax');
     });
 
     $('.main-section__mobile-menu').on('click', function(e) {
@@ -341,6 +331,27 @@ toggleLinks('deephousesax');
             toggleLinks('deephousesax');
         }
     });
+
+     function toggleLinks(section) {
+        if (section === 'solo' || section === 'deephousesax') {
+            $('.main-section__soc-link_inst').attr('href', 'https://www.instagram.com/alex_novich_');
+            $('.main-section__soc-link_vk').attr('href', 'https://vk.com/id18426389');
+            $('.contacts__table-soc-link_inst').attr('href', 'https://www.instagram.com/alex_novich_');
+            $('.contacts__table-soc-link_vk').attr('href', 'https://vk.com/id18426389');
+        } else if (section === 'rivertime') {
+            $('.main-section__soc-link_inst').attr('href', 'https://www.instagram.com/rivertimeshow/');
+            $('.main-section__soc-link_vk').attr('href', 'https://vk.com/rivertimemusic');
+            $('.contacts__table-soc-link_inst').attr('href', 'https://www.instagram.com/rivertimeshow/');
+            $('.contacts__table-soc-link_vk').attr('href', 'https://vk.com/rivertimemusic');
+        }
+    }
+
+    function stopVideo() {
+        let videos = $('.video__video');
+        videos.each((i, item) => {
+            item.remove();
+        })
+    }
 
     function showModal() {
         $('.modal-success').addClass('modal_active');
@@ -576,13 +587,15 @@ toggleLinks('deephousesax');
     }
 
     function loadRivertimeSection() {
+        window.location.hash = '#rivertime';
+        stopVideo();
         enableRev($('.members-info__genres, .members-info__genres-title, .members-info__desc, .members-info__slider, .members-info__group'), 5, 9);
         enableRev($('.members__slider-nav'), 5, 10);
         enableRev($('.rivertime-video__title'), 5, 2);
         enableRev($('.rivertime-video__slider'), 5, 1);
         enableRev($('.rivertime-video__slider-arr'), 5, 7);
         enableRev($('.rivertime-video__nav'), 5, 6);
-        window.location.hash = '#rivertime';
+
         $('.deephouse__pic').addClass('revealator-fade revealator-duration3 revealator-once revealator-delay1');
         setTimeout(() => {
             $('.members-info__slider').slick('refresh');
@@ -594,6 +607,7 @@ toggleLinks('deephousesax');
 
     function loadDeephouseSection() {
         window.location.hash = '#deephousesax';
+        stopVideo();
         enableRev($('.deephouse-video-info__genres, .deephouse-video-info__desc'), 5, 9);
         enableRev($('.deephouse-video__slider'), 5, 6);
         enableRev($('.deephouse-video__slider-arr'), 5, 7);

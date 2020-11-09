@@ -427,7 +427,7 @@ h1 {
 }
 
 .main-container_rivertime {
-  background: url("img/rivertimebg.jpg") center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
+  background: url("img/rivertimebg.jpg") 0 30%/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
 }
 
 .main-container_rivertime .main-section__title_rivertime {
@@ -926,7 +926,7 @@ h1 {
   width: 100%;
   height: 100%;
   max-width: 1600px;
-  background: url("../../../../img/mainbg.png") 20% 100%/contain no-repeat;
+  background: url("../../img/mainbg.png") 20% 100%/contain no-repeat;
 }
 
 .main-section__title-container {
@@ -1686,7 +1686,6 @@ h1 {
   width: 100%;
   height: 100%;
   position: relative;
-  /*bottom: -3px;*/
   object-fit: cover;
   transition: all .5s ease;
 }
@@ -1751,6 +1750,10 @@ h1 {
 .rivertime__readmore-arrow path,
 .deephouse__readmore-arrow path {
   fill: #fff;
+}
+
+.rivertime__photo {
+  object-position: top;
 }
 
 /* RIVERTIME SECTIONS*/
@@ -2035,6 +2038,10 @@ h1 {
   width: 74%;
 }
 
+.order__sale {
+  visibility: hidden;
+}
+
 @media (min-width: 2000px) {
   .main-section__title-wrapper {
     background: url("img/mainbg.png") 60% 100%/cover no-repeat;
@@ -2075,6 +2082,10 @@ h1 {
   .contacts__email,
   .contacts__phone {
     font-size: 32px;
+  }
+
+  .main-section__title_rivertime {
+    font-size: 130px;
   }
 }
 
@@ -2149,10 +2160,6 @@ h1 {
   .main-section__order-btn,
   .main-section__readmore-btn {
     font-size: 11px;
-  }
-
-  .main-section__title_rivertime {
-    font-size: 130px;
   }
 
   .main-section__soc-icon,
@@ -2290,7 +2297,7 @@ h1 {
   }
 
   .main-container_rivertime {
-    background: url("../../../img/rivertime-mobilebg.jpg") center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
+    background: url("../../img/rivertime-mobilebg.jpg") center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
   }
 }
 
@@ -3218,7 +3225,7 @@ h1 {
   }
 
   .main-container_rivertime {
-    background: url("../../../img/rivertime-mobilebg.jpg") center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
+    background: url("../../img/rivertime-mobilebg.jpg") center/cover no-repeat, linear-gradient(180deg, #e7e5e8, #e7e5e8);
   }
 
   .main-section__role {

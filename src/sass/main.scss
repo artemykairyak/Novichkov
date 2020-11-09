@@ -427,7 +427,7 @@ h1 {
     }
 
     &_rivertime {
-        background: url(img/rivertimebg.jpg) center/ cover no-repeat,
+        background: url(img/rivertimebg.jpg) 0 30%/ cover no-repeat,
             linear-gradient(180deg, #e7e5e8, #e7e5e8);
 
         .main-section__title_rivertime {
@@ -1709,10 +1709,9 @@ h1 {
         width: 100%;
         height: 100%;
         position: relative;
-        /*bottom: -3px;*/
+
         object-fit: cover;
         transition: all .5s ease;
-
     }
 
     &__labels {
@@ -1769,6 +1768,10 @@ h1 {
             fill: #fff;
         }
     }
+}
+
+.rivertime__photo {
+    object-position: top;
 }
 
 /* RIVERTIME SECTIONS*/
@@ -2074,12 +2077,16 @@ h1 {
 }
 
 @media (max-width: 1400px) {
+
     .contacts__email,
     .contacts__phone {
         font-size: 32px;
     }
-    }
 
+    .main-section__title_rivertime {
+        font-size: 130px;
+    }
+}
 
 @media (max-width: 1300px) {
     .main-container_rivertime {
@@ -2155,10 +2162,6 @@ h1 {
     .main-section__order-btn,
     .main-section__readmore-btn {
         font-size: 11px;
-    }
-
-    .main-section__title_rivertime {
-        font-size: 130px;
     }
 
     .main-section__soc-icon,
@@ -2279,11 +2282,12 @@ h1 {
 }
 
 @media (max-width: 1060px) {
+
     .contacts__email,
     .contacts__phone {
         font-size: 26px;
     }
-    }
+}
 
 @media (max-width: 1024px) and (min-height: 1360px) {
     .main-section {
@@ -2670,7 +2674,7 @@ h1 {
     .contacts__table-soc {
         display: block;
     }
-    }
+}
 
 @media (max-width: 670px) {
 
@@ -3475,4 +3479,8 @@ h1 {
         padding-bottom: 50px;
     }
 
+}
+
+.order__sale {
+    visibility: hidden;
 }
