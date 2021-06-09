@@ -1,33 +1,3 @@
-const input1 = 'leetcode';
-const input2 = 'aabb';
-
-const findUniue = str => {
-    let map = new Map()
-
-    for(let i = 0; i < str.length; i++) {
-        let cur = str[i]
-
-        if(map.has(cur)) {
-            map.set(cur, map.get(cur) + 1)
-        } else {
-            map.set(cur, 1)
-        }
-    }
-
-    for(let i = 0; i< str.length; i++) {
-        if(map.get(str[i]) === 1) {
-            return i
-        }
-
-    }
-    return -1
-
-}
-
-console.log(findUniue(input1))
-
-console.log(findUniue(input2))
-
 $(function() {
 
     $('.main-container').prepend('<video class="main-container__videobg" muted loop autoplay playsinline preload="metadata" poster="img/deephouse.jpg"><source src="img/deephouse.webm" type="video/webm"><source src="img/deephouse.mp4" type="video/mp4"></video>');
